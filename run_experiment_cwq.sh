@@ -20,6 +20,9 @@
 # https://github.com/tensorflow/tensor2tensor/tree/master/tensor2tensor/models
 model="lstm_seq2seq_attention"
 
+#set the language of the dataset to load ("en", "he", "kn", ""zh")
+data_language="he"
+
 # Custom hyperparameters are defined in cwq/cwq.py. You can select tensor2tensor
 # default parameters as well.
 hparams_set="cwq_lstm_attention_multi"
@@ -37,13 +40,13 @@ split="$(echo ${split_path%".json"} | cut -d'/' -f3)"
 
 # Tensor2tensor results will be written to this path. This includes encode/
 # decode files, the vocabulary, and the trained models.
-save_path="t2t_data/${dataset}/${split}/${model}"
+save_path="t2t_data/${dataset}_${data_language}/${split}/${model}"
 
 # The tensor2tensor problem to use. The cwq problem is defined in cwq/cwq.py.
 problem="cwq"
 
 # Other path-related variables.
-tmp_path="/tmp/cwq_tmp"
+tmp_path="/tmp/cwq_tmp_${data_language}"
 work_dir="$(pwd)"
 output_dir="${save_path}/output"
 checkpoint_path="${save_path}/output/model.ckpt-${train_steps}"
@@ -56,13 +59,13 @@ decode_path_test="${save_path}/test/test_decode.txt"
 decode_inferred_path_test="${save_path}/test/test_decode_inferred.txt"
 
 # Evaluation results will be written to this path.
-eval_results_path_dev="evaluation-${dataset}-${split}-${model}-dev.txt"
-eval_results_path_test="evaluation-${dataset}-${split}-${model}-test.txt"
+eval_results_path_dev="evaluation-${dataset}-${data_language}-${split}-${model}-dev.txt"
+eval_results_path_test="evaluation-${dataset}-${data_language}-${split}-${model}-test.txt"
 
 # ================= Pipeline ================
 
 python3 -m preprocess_main_cwq --dataset_path="${dataset_path}" \
-  --split_path="${split_path}" --save_path="${save_path}"
+  --split_path="${split_path}" --save_path="${save_path}" --data_language="${data_language}"
 
 t2t-datagen --t2t_usr_dir="${work_dir}/cwq/" --data_dir="${save_path}" \
   --problem="${problem}" --tmp_dir="${tmp_path}"

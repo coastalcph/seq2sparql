@@ -31,6 +31,8 @@ flags.DEFINE_string('split_path', None, 'path to the JSON file containing '
 flags.DEFINE_string('save_path', None, 'Path to the directory where to '
                     'save the files to.')
 
+flags.DEFINE_string('data_language', None, 'language of the dataset')
+
 flags.mark_flag_as_required('save_path')
 
 
@@ -38,7 +40,7 @@ def main(argv):
   if len(argv) > 1:
     raise app.UsageError('Too many command-line arguments.')
 
-  dataset = preprocessor.load_dataset(FLAGS.dataset_path, FLAGS.split_path)
+  dataset = preprocessor.load_dataset(FLAGS.dataset_path, FLAGS.split_path, FLAGS.data_language)
   preprocessor.write_dataset(dataset, FLAGS.save_path)
   token_vocab = preprocessor.get_token_vocab(FLAGS.save_path)
   preprocessor.write_token_vocab(token_vocab, FLAGS.save_path)

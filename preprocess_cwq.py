@@ -51,30 +51,24 @@ def preprocess_sparql(query):
     return ' '.join(tokens).replace('\\n', ' ')
 
 
-def get_encode_decode_pair(sample):
-    # Apply some simple preprocessing on the tokenizaton, which improves the
-    # performance of the models significantly.
-    # Change variable passed to tokenize_punctuation for other languages: questionPatternModEntities_he \
-    #   questionPatternModEntities_kn, questionPatternModEntities_zh
-    encode_text = tokenize_punctuation(sample['questionPatternModEntities'])
-    decode_text = preprocess_sparql(sample['sparqlPatternModEntities'])
-    return (encode_text, decode_text)
-
-
-def load_dataset(dataset, split):
-    """Load dataset do some basic preprocessing."""
+def load_dataset(dataset, split, data_language):
+    """Load dataset do some basic preprocessing.
+    Change variable passed to tokenize_punctuation for other languages"""
     logging.info('Loading dataset.')
     with open(dataset, 'r') as f_1:
         cwq = json.load(f_1)
     with open(split, 'r') as f_2:
         splits = json.load(f_2)
     split_names = {'train': 'trainIdxs', 'dev': 'devIdxs', 'test': 'testIdxs'}
-
+    questionpatternmodentities_dict = {'en': 'questionPatternModEntities', 'he': 'questionPatternModEntities_he',
+                                       'kn': 'questionPatternModEntities_kn', 'zh': 'questionPatternModEntities_zh'}
+    sparqlpatternmodentities_dict = {'en': 'sparqlPatternModEntities', 'he': 'sparqlPatternModEntities_he',
+                                     'kn': 'sparqlPatternModEntities_kn', 'zh': 'sparqlPatternModEntities_zh'}
     dataset = collections.defaultdict(list)
     for cwq_split_name, split_name in split_names.items():
         for idx in splits[split_name]:
-            encode_decode_pair = (tokenize_punctuation(cwq[idx]['questionPatternModEntities']),
-                                  preprocess_sparql(cwq[idx]['sparqlPatternModEntities']))
+            encode_decode_pair = (tokenize_punctuation(cwq[idx][questionpatternmodentities_dict[data_language]]),
+                                  preprocess_sparql(cwq[idx]["sparqlPatternModEntities"]))
             dataset[cwq_split_name].append(encode_decode_pair)
 
     size_str = ', '.join(f'{s}={len(dataset[s])}' for s in split_names)
