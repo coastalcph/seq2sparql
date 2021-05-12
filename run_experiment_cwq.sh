@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1
 #SBATCH --output=./logs/log.out
 #SBATCH --cpus-per-task=1
-#SBATCH --time=06:00:00
+#SBATCH --time=00:10:00
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:titanrtx
 #SBATCH --mem=6GB
@@ -34,11 +34,11 @@ for data_language in he kn zh en; do
   # Models from our paper: lstm_seq2seq_attention, transformer,
   # universal_transformer. Other models (see subdirectories as well):
   # https://github.com/tensorflow/tensor2tensor/tree/master/tensor2tensor/models
-  model="lstm_seq2seq_attention"
+  model="lstm_seq2seq_attention" # "evolved_transformer"
 
   # Custom hyperparameters are defined in cwq/cwq.py. You can select tensor2tensor
   # default parameters as well.
-  hparams_set="cwq_lstm_attention_multi"
+  hparams_set="cwq_lstm_attention_multi" # "cwq_evolved_transformer"
 
   # We report experiments with 35,000 steps in our paper.
   train_steps="35000"
