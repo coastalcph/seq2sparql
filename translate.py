@@ -47,7 +47,7 @@ def translate_with_qmark(q, qMod, target):
     #            else:
     #                modEntity_list.append(qMod[position:position+2])
     try:
-        assert len(modEntity_list) == num_f
+        #assert len(modEntity_list) == num_f
         #translate
         q_trans = translate_client.translate(qBrackets, target_language=target)["translatedText"]
         q_trans_me = translate_client.translate(qMod, target_language=target)["translatedText"]
