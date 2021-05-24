@@ -19,6 +19,7 @@ import collections
 import json
 import os
 import string
+import jieba
 from typing import Dict, List, Tuple
 
 from absl import logging
@@ -28,9 +29,13 @@ from tensorflow.compat.v1.io import gfile
 Dataset = Dict[str, List[Tuple[str, str]]]
 
 
-def tokenize_punctuation(text):
-    text = map(lambda c: ' %s ' % c if c in string.punctuation else c, text)
-    return ' '.join(''.join(text).split())
+def tokenize(text, data_language):
+    if data_language != 'zh':
+        text = map(lambda c: ' %s ' % c if c in string.punctuation else c, text)
+        return ' '.join(''.join(text).split())
+    else:
+        text = jieba.cut(text, cut_all=False)
+        return " ".join(text)
 
 
 def preprocess_sparql(query):
@@ -62,13 +67,11 @@ def load_dataset(dataset, split, data_language):
     split_names = {'train': 'trainIdxs', 'dev': 'devIdxs', 'test': 'testIdxs'}
     questionpatternmodentities_dict = {'en': 'questionPatternModEntities', 'he': 'questionPatternModEntities_he',
                                        'kn': 'questionPatternModEntities_kn', 'zh': 'questionPatternModEntities_zh'}
-    sparqlpatternmodentities_dict = {'en': 'sparqlPatternModEntities', 'he': 'sparqlPatternModEntities_he',
-                                     'kn': 'sparqlPatternModEntities_kn', 'zh': 'sparqlPatternModEntities_zh'}
     dataset = collections.defaultdict(list)
     for cwq_split_name, split_name in split_names.items():
         for idx in splits[split_name]:
-            encode_decode_pair = (tokenize_punctuation(cwq[idx][questionpatternmodentities_dict[data_language]]),
-                                  preprocess_sparql(cwq[idx]["sparqlPatternModEntities"]))
+            encode_decode_pair = (tokenize(cwq[idx][questionpatternmodentities_dict[data_language]], data_language),
+                                  preprocess_sparql(cwq[idx]['sparqlPatternModEntities']))
             dataset[cwq_split_name].append(encode_decode_pair)
 
     size_str = ', '.join(f'{s}={len(dataset[s])}' for s in split_names)
