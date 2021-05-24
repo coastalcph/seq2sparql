@@ -35,32 +35,9 @@ def translate_with_qmark(q, qMod, target):
             qBrackets = replacer(qBrackets, back_bracket[num_b], position)
             num_b += 1
     assert num_f == num_b
-    
-    #get the ModEntities in order
-    #modEntity_list = []
-    #for position, char in enumerate(qMod):
-    #    if char=="M":
-    #        if qMod[position+1].isnumeric():
-    #            if position+2 != len(qMod):
-    #                if qMod[position+2] == " ":
-    #                    modEntity_list.append(qMod[position:position+2])
-    #            else:
-    #                modEntity_list.append(qMod[position:position+2])
     try:
-        #assert len(modEntity_list) == num_f
-        #translate
         q_trans = translate_client.translate(qBrackets, target_language=target)["translatedText"]
         q_trans_me = translate_client.translate(qMod, target_language=target)["translatedText"]
-        #for i in range(0, len(modEntity_list)):
-        #    front = front_bracket[i]
-        #    back = back_bracket[i]
-        #    mod = modEntity_list[i] 
-        #    start = q_trans_me.find(front)
-        #    end = q_trans_me.find(back)
-        #    q_trans_me = f"{q_trans_me[:start]}{mod}{q_trans_me[end+1:]}"      
-        #print(f"qBrackets: {qBrackets}")
-        #print(f"q_trans_me: {q_trans_me}")
-
         q_trans_bracket = q_trans[:-1] if q_trans[-1] == "?" else q_trans
         q_trans_me = q_trans_me[:-1] if q_trans_me[-1] == "?" else q_trans_me
         return q_trans_bracket, q_trans_me
@@ -69,7 +46,7 @@ def translate_with_qmark(q, qMod, target):
         return "NOPE", "NOPE"
 
 def translate_file(target):
-    with open(f"./cwq/dataset.json", "r") as f:
+    with open(f"./cwq/dataset_paranthesis.json", "r") as f:
         data = json.load(f)
     nope = 0
     for idx in tqdm(range(len(data))):
@@ -78,15 +55,15 @@ def translate_file(target):
             nope+=1
         data[idx][f"questionWithBrackets_{target}"] = qBrackets
         data[idx][f"questionPatternModEntities_{target}"] = qModEntities 
-    print(f"Num fucky: {nope}")
+    print(f"Num bad: {nope}")
     with open(f"./cwq/dataset_paranthesis.json", "w") as f:
         json.dump(data, f)
 
 
 def main():
     translate_file("kn")
-    translate_file("he")
-    translate_file("zh")
+    #translate_file("he")
+    #translate_file("zh")
 
 
 if __name__ == "__main__":
