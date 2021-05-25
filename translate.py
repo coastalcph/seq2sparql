@@ -62,8 +62,8 @@ def translate_file(target):
 
 def main():
     translate_file("kn")
-    #translate_file("he")
-    #translate_file("zh")
+    translate_file("he")
+    translate_file("zh")
 
 
 if __name__ == "__main__":
