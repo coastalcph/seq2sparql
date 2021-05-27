@@ -20,8 +20,8 @@ def replacer(s, newstring, index, nofail=False):
     return s[:index] + newstring + s[index + 1:]
 
 def translate_with_qmark(q, qMod, target):
-    front_bracket = ["[", "(", "{", "«", "<", '"', "'", "#"]
-    back_bracket = ["]", ")", "}", "»", ">", '"', "'", "#"]
+    front_bracket = ["[", "(", "{", "<", '"', "'", "#", "*"]
+    back_bracket = ["]", ")", "}", ">", '"', "'", "#", "*"]
     q = q if q[-1] == "?" else q + "?"
     qBrackets = q
     num_f = 0
