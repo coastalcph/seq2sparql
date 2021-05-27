@@ -20,8 +20,8 @@ def replacer(s, newstring, index, nofail=False):
     return s[:index] + newstring + s[index + 1:]
 
 def translate_with_qmark(q, qMod, target):
-    front_bracket = ["[", "(", "{", "«", "「", "『", "【", "'"]
-    back_bracket = ["]", ")", "}", "»", "」", "』", " 】", "'"]
+    front_bracket = ["[", "(", "{", "«", "<", '"', "'", "#"]
+    back_bracket = ["]", ")", "}", "»", ">", '"', "'", "#"]
     q = q if q[-1] == "?" else q + "?"
     qBrackets = q
     num_f = 0
@@ -40,21 +40,22 @@ def translate_with_qmark(q, qMod, target):
         q_trans_me = translate_client.translate(qMod, target_language=target)["translatedText"]
         q_trans_bracket = q_trans[:-1] if q_trans[-1] == "?" else q_trans
         q_trans_me = q_trans_me[:-1] if q_trans_me[-1] == "?" else q_trans_me
-        return q_trans_bracket, q_trans_me
+        return q_trans_bracket, q_trans_me, qBrackets
     except Exception as e:
         print("* An Entity was unbracketed. Skipped example.")
-        return "NOPE", "NOPE"
+        return "NOPE", "NOPE", "NOPE"
 
 def translate_file(target):
     with open(f"./cwq/dataset_paranthesis.json", "r") as f:
         data = json.load(f)
     nope = 0
     for idx in tqdm(range(len(data))):
-        qBrackets, qModEntities =  translate_with_qmark(data[idx][f"questionWithBrackets"],data[idx][f"questionPatternModEntities"], target)
+        qBrackets, qModEntities, qBracketsEng =  translate_with_qmark(data[idx][f"questionWithBrackets"],data[idx][f"questionPatternModEntities"], target)
         if qBrackets == "NOPE":
             nope+=1
         data[idx][f"questionWithBrackets_{target}"] = qBrackets
-        data[idx][f"questionPatternModEntities_{target}"] = qModEntities 
+        data[idx][f"questionPatternModEntities_{target}"] = qModEntities
+        data[idx][f"questionPatternModEntites"] = qBracketsEng 
     print(f"Num bad: {nope}")
     with open(f"./cwq/dataset_paranthesis.json", "w") as f:
         json.dump(data, f)
