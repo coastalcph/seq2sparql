@@ -13,17 +13,16 @@
 echo "HOSTNAME: " `hostname`
 echo "ALLOCATED GPU: " $CUDA_VISIBLE_DEVICES
 
-# This script assumes that t2t training was run first and hence all required files are already present in t2t_data
-
+# create datasets in correct format
 # python make_hf_dataset.py mcd1
 # python make_hf_dataset.py mcd2
 # python make_hf_dataset.py mcd3
 # python make_hf_dataset.py random_split
 
-MODEL_NAME=mbert-bbase
-EVALUATE_ON=test
+# MODEL_NAME=mbert-bbase
+# EVALUATE_ON=test
 
-# train
+# train on english data
 # for split in mcd1 mcd2 mcd3 random_split; do
 #     # train tokenizers only on english data
 #     # python train_tokenizers.py --data_split=$split --lang=en --files ../data/hf_data/cwq_en/$split/train.json ../data/hf_data/cwq_en/$split/dev.json ../data/hf_data/cwq_en/$split/test.json
@@ -35,16 +34,16 @@ EVALUATE_ON=test
 # done
 
 # train on non-english data
-for split in mcd1 mcd2 mcd3 random_split; do
-    for lang in he kn zh; do
-        echo "Training on $split/$lang"
-        python train_tokenizers.py --data_split=$split --lang=$lang --files ../data/translations/$split/train.$lang.json ../data/translations/$split/dev.$lang.json ../data/translations/$split/test.$lang.json
-        accelerate launch train_seq2seq.py --per_device_train_batch_size=128 --per_device_eval_batch_size=128 \
-            --train_file=../data/translations/$split/train.$lang.json --validation_file=../data/translations/$split/dev.$lang.json \
-            --test_file=../data/translations/$split/test.$lang.json --output_dir=./models/mbert-bbase_${split}_$lang --num_train_epochs=100 \
-            --data_split=$split --pretrained_encoder --train_lang=$lang --eval_lang=$lang --pretrained_encoder_freeze_emb # --only_eval --eval_all
-    done
-done
+# for split in mcd1 mcd2 mcd3 random_split; do
+#     for lang in he kn zh; do
+#         echo "Training on $split/$lang"
+#         python train_tokenizers.py --data_split=$split --lang=$lang --files ../data/translations/$split/train.$lang.json ../data/translations/$split/dev.$lang.json ../data/translations/$split/test.$lang.json
+#         accelerate launch train_seq2seq.py --per_device_train_batch_size=128 --per_device_eval_batch_size=128 \
+#             --train_file=../data/translations/$split/train.$lang.json --validation_file=../data/translations/$split/dev.$lang.json \
+#             --test_file=../data/translations/$split/test.$lang.json --output_dir=./models/mbert-bbase_${split}_$lang --num_train_epochs=100 \
+#             --data_split=$split --pretrained_encoder --train_lang=$lang --eval_lang=$lang --pretrained_encoder_freeze_emb # --only_eval --eval_all
+#     done
+# done
 
 # predict
 # turn off multi-gpu training in accelerate
@@ -155,8 +154,8 @@ done
 
 # evaluate
 EVALUATE_ON=test
-for split in random_split; do   # mcd1 mcd2 mcd3 random_split 
-    for lang in he; do  # en he kn zh
+for split in mcd1 mcd2 mcd3 random_split; do   # mcd1 mcd2 mcd3 random_split 
+    for lang in en he kn zh; do  # en he kn zh
         echo "Evaluating on $split/$lang"
         python -m evaluate_main --questions_path=./data/translations/$split/${EVALUATE_ON}.$lang.txt \
         --golden_answers_path=./data/translations/$split/${EVALUATE_ON}.$lang.sparql \
