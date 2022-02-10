@@ -21,3 +21,7 @@ Our proposed system to perform semantic parsing on the newly developed dataset i
 1. Fine-tune the model by learning from denotations with policy gradient.
 
 As baselines, we develop a rule-based system, as well as an information retrieval system based on the Wikipedia API.
+
+Notes:
+1. Use transformers==4.15.0 for training t5 models
+2. Use transformers==4.6.0 for training other seq2seq models

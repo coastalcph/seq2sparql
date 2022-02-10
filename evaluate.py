@@ -17,10 +17,10 @@
 
 from typing import List, Tuple, Optional
 
+import sacrebleu
 import dataclasses
 
 from tensorflow.compat.v1.io import gfile
-
 
 @dataclasses.dataclass
 class AccuracyResult(object):
@@ -68,6 +68,7 @@ def get_accuracy_result(questions_path, golden_answers_path,
       matches=[],
       mismatches=[],
       inferred_answers_path=inferred_answers_path)
+  print(sacrebleu.corpus_bleu(inferred_answers, [golden_answers], lowercase=False))
   if len(set((len(questions), len(golden_answers), len(inferred_answers)))) > 1:
     raise ValueError(
         'Not writing accuracy results: Input files have different lengths\n'
