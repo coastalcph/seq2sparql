@@ -1,27 +1,36 @@
-# seq2sparql
+# Compositional Wikidata Questions (CWQ)
+CWQ is a multilingual KBQA dataset grounded in and executable over
+Wikidata. Our dataset includes questions in four languages (Hebrew, Kannada, Chinese and English), and their associated SPARQL
+queries.
 
-In this project, we aim to generate SPARQL queries from natural language queries in the form of noun phrases (e.g., "impressionist painters", "American poets from the 18th century”), so that they can be executed against [Wikidata](https://www.wikidata.org).
-Since no large-scale evaluation of semantic parsing for Wikidata queries has been done, we create a resource consisting of:
+## Data
+The CWQ dataset is stored in the repo as `cwq/dataset.json`. 
 
-1. **Parallel datasets.** Natural language queries, along with their SPARQL form and the corresponding results.
-    1. Scraped from online tutorials: [wiki-sparql](https://github.com/coastalcph/wiki-sparql).
-    2. Using human annotation.
-1. **Template-constructed datasets.** Using templates, we will generate natural language queries for SPARQL queries from publically available Wikidata query logs. 
-1. **Separate datasets.** We will also build separate (i.e., non-parallel) SPARQL and natural language query (Wikipedia category titles, along with their members, e.g., 18th-century American poets) datasets to enable language modelling.
+The three MCD splits and a random split is stored under `cwq/split/`.
 
-To give a good indication of the broad-coverage support of the evaluated systems, our evaluation resource focuses on ambiguous cases  (e.g., intransitive and transitive verbs or PP-attachment ambiguities).
+The dataset's details and generation method is described in the arXiv preprint.
+## Code for data generation and the experiments
+Preparing in progress.
 
-Our proposed system to perform semantic parsing on the newly developed dataset involves the following steps:
+## Citations
 
-1. Learn embeddings for words (natural language) and for SPARQL keywords, entities and relations, using word embedding and knowledge graph embedding methods.
-1. Induce shared embeddings between natural language and SPARQL, using the Wikidata entity and relation labels as training data.
-1. Train on the annotated parallel data to generate SPARQL from text and vice versa.
-1. Learn language models for natural language and for SPARQL queries.
-1. Back-translation: use the trained model to generate SPARQL from text and vice versa, and use the result as training data for the other direction.
-1. Fine-tune the model by learning from denotations with policy gradient.
+If you use this dataset, please cite the following:
+* Ruixiang Cui, Rahul Aralikatte, Heather Lent and Daniel Hershcovich.2021.[Multilingual Compositional Wikidata Questions](https://arxiv.org/pdf/2108.03509.pdf). _arXiv preprint
+arXiv:2108.03509_.
+``` bibtex
+@misc{cui2021multilingual,
+      title={Multilingual Compositional Wikidata Questions}, 
+      author={Ruixiang Cui and Rahul Aralikatte and Heather Lent and Daniel Hershcovich},
+      year={2021},
+      eprint={2108.03509},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+The CWQ dataset is based on [CFQ](https://github.com/google-research/google-research/tree/master/cfq).
 
-As baselines, we develop a rule-based system, as well as an information retrieval system based on the Wikipedia API.
+## Contact
+For questions and usage issues, please contact <rc@di.ku.dk> .
 
-Notes:
-1. Use transformers==4.15.0 for training t5 models
-2. Use transformers==4.6.0 for training other seq2seq models
+## License
+CWQ is released under the [CC-BY license](https://creativecommons.org/licenses/by/4.0/).
