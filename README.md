@@ -12,6 +12,18 @@ The gold test set is stored as `mcwq/gold_test.json`.
 
 MCWQ's details and generation method is described in the paper.
 
+## Trainig T5/mT5 models
+To replicate the results reported in the paper:
+
+For training and evaluating T5, please refer to `hf/run_t5.sh`;
+
+For training and evaluating mT5, please refer to `hf/run_mt5.sh`;
+
+For evaluating zero-shot cross-lingual transfer of mT5, please refer to `hf/pred_eval_mt5_zero_shot.sh`.
+
+We are working on releasing the checkpoints on HuggingFace soon.
+
+
 Below show the results of monolingual and cross-lingual experiments on MCWQ. 
 
 ## Experiment Results
@@ -34,15 +46,13 @@ Below show the results of monolingual and cross-lingual experiments on MCWQ.
 |             **Language**                              | He             | Kn   | Zh   | He             | Kn   | Zh   | He             | Kn   | Zh   | He                | Kn   | Zh   | He     | Kn   | Zh   |
 | mT5-small                     | **0\.4**           | **0\.8**  | **0\.1**  | 0\.1           | 0\.1  | 0\.1  | **0\.1**           | **0\.1**  | 0\.1  | 0\.2              | 0\.3  | 0\.2  | 0\.5   | 0\.4  | 1\.1  |
 | mT5-base                      | 0\.1           | 0     | 0     | **1\.0**           | **2\.2**  | **4\.1**  | **0\.1**           | 0     | **0\.3**  | **0\.4**              | **0\.7**  | **1\.5**  | **1\.1**   | **0\.9**  | **7\.2**  |
-## Code for data generation and model checkpoints 
-Preparing in progress.
 
 ## Citations
 
 If you use this dataset, please cite the following:
 * Ruixiang Cui, Rahul Aralikatte, Heather Lent and Daniel Hershcovich.2021.[Compositional Generalization in Multilingual Semantic Parsing over Wikidata](https://arxiv.org/abs/2108.03509). TACL, 2022.
 ``` bibtex
-@article{cui-etal-2022-multilingual,
+@article{cui-etal-2022-compositional,
     title={Compositional Generalization in Multilingual Semantic Parsing over Wikidata},
     author={Ruixiang Cui and Rahul Aralikatte and Heather Lent and Daniel Hershcovich},
     year={2022},
