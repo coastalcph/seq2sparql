@@ -1,19 +1,16 @@
-# Compositional Wikidata Questions (CWQ)
-CWQ is a multilingual KBQA dataset grounded in and executable over
+# Multilingual Compositional Wikidata Questions (MCWQ)
+MCWQ (previously termed CWQ) is a multilingual KBQA dataset grounded in and executable over
 Wikidata. Our dataset includes questions in four languages (Hebrew, Kannada, Chinese and English), and their associated SPARQL
-queries.
+queries. MCWQ contains 124,187 question query pairs.
 
 ## Data
-The first version of CWQ dataset accompanying the preprint [Multilingual Compositional Wikidata Questions](https://arxiv.org/pdf/2108.03509.pdf) is stored in the repo as `cwq/dataset.json`. 
+The MCWQ dataset can be downloaded at [Google Drive](https://drive.google.com/drive/folders/19YmuXYKmnmVllVkOr9nMT1nsXFd9i9hu?usp=sharing).  
 
-The three MCD splits and a random split is stored under `cwq/split/`.
+The three MCD splits and a random split is stored under `mcwq/splits/`.
 
-The dataset's details and generation method is described in the arXiv preprint.
+The gold test set is stored as `mcwq/gold_test.json`.
 
----
-We are planning to release a second version of CWQ, named MCWQ. We create the dataset in a similar approach as CWQ, but with a finer wikidata property mapping  and data cleaning strategy. MCWQ contains 124,187 question query pairs, which is about 11 times the size of CWQ. 
-
-You can download the latest dataset and its splits on [Google Drive](https://drive.google.com/drive/folders/19YmuXYKmnmVllVkOr9nMT1nsXFd9i9hu?usp=sharing).  
+MCWQ's details and generation method is described in the paper.
 
 Below show the results of monolingual and cross-lingual experiments on MCWQ. 
 
@@ -37,22 +34,21 @@ Below show the results of monolingual and cross-lingual experiments on MCWQ.
 |             **Language**                              | He             | Kn   | Zh   | He             | Kn   | Zh   | He             | Kn   | Zh   | He                | Kn   | Zh   | He     | Kn   | Zh   |
 | mT5-small                     | **0\.4**           | **0\.8**  | **0\.1**  | 0\.1           | 0\.1  | 0\.1  | **0\.1**           | **0\.1**  | 0\.1  | 0\.2              | 0\.3  | 0\.2  | 0\.5   | 0\.4  | 1\.1  |
 | mT5-base                      | 0\.1           | 0     | 0     | **1\.0**           | **2\.2**  | **4\.1**  | **0\.1**           | 0     | **0\.3**  | **0\.4**              | **0\.7**  | **1\.5**  | **1\.1**   | **0\.9**  | **7\.2**  |
-## Code for data generation and the experiments
+## Code for data generation and model checkpoints 
 Preparing in progress.
 
 ## Citations
 
 If you use this dataset, please cite the following:
-* Ruixiang Cui, Rahul Aralikatte, Heather Lent and Daniel Hershcovich.2021.[Multilingual Compositional Wikidata Questions](https://arxiv.org/pdf/2108.03509.pdf). _arXiv preprint
-arXiv:2108.03509_.
+* Ruixiang Cui, Rahul Aralikatte, Heather Lent and Daniel Hershcovich.2021.[Compositional Generalization in Multilingual Semantic Parsing over Wikidata](https://arxiv.org/abs/2108.03509). TACL, 2022.
 ``` bibtex
-@misc{cui2021multilingual,
-      title={Multilingual Compositional Wikidata Questions}, 
-      author={Ruixiang Cui and Rahul Aralikatte and Heather Lent and Daniel Hershcovich},
-      year={2021},
-      eprint={2108.03509},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@article{cui-etal-2022-multilingual,
+    title={Compositional Generalization in Multilingual Semantic Parsing over Wikidata},
+    author={Ruixiang Cui and Rahul Aralikatte and Heather Lent and Daniel Hershcovich},
+    year={2022},
+    journal = "Transactions of the Association for Computational Linguistics",
+    publisher = "MIT Press",
+    url = "https://arxiv.org/abs/2108.03509"
 }
 ```
 The CWQ dataset is based on [CFQ](https://github.com/google-research/google-research/tree/master/cfq).

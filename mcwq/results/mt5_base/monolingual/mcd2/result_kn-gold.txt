@@ -1,0 +1,586 @@
+Accuracy on hf/models/mt5-base-kn-mcd2/generated_predictions_kn.txt is 0.23225806451612904
+
+==========WRONG==========
+Q: M0 ಒಬ್ಬ ಚಿತ್ರಕಥೆಗಾರನೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q69423232 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q69423232 ) ) . ( M0 ( wdt:P27 ) ( wd:Q29999 ) ) rb
+
+Q: M0 ಒಬ್ಬ ಆಗಿದ್ದರೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q36834 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P27 ) ( wd:Q29999 ) ) rb
+
+Q: M0 ಅವರು M1 ಅಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತಿದರೇ 
+ Gold: ASK WHERE lb ( M0 ( wdt:P108 ) ( M1 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P108 ) ( M0 ) ) rb
+
+Q: M0 ಅನ್ನು M1 ಬರೆದಿದ್ದಾರೆಯೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P58 ) ( M1 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P58 ) ( M0 ) ) rb
+
+Q: M1 ಅವರು M0 ದ ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಪಕರೇ 
+ Gold: ASK WHERE lb ( M0 ( wdt:P1431 ) ( M1 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P1431 ) ( M0 ) ) rb
+
+Q: M1 ನ ವಸ್ತ್ರ ವಿನ್ಯಾಸಕರು ಒಬ್ಬ ಸಂಯೋಜಕರೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( M1 ( wdt:P2515 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P2515 ) ( ?x0 ) ) . ( M1 ( wdt:P106 ) ( wd:Q36834 ) ) . ( M1 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M1 ನ ಸಿನಿಮಾಟೋಗ್ರಾಫರ್ ಒಬ್ಬ ಚಿತ್ರಕಥೆಗಾರರೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q69423232 ) ) . ( M1 ( wdt:P344 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P344 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M1 ) ) rb
+
+Q: M1 ರ ಸಂಗಾತಿ M0 ರ ಉದ್ಯೋಗಿಯೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P108 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M1 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P108 ) ( M0 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( M1 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M1 ನ ನಿರ್ಮಾಪಕರು ಒಬ್ಬ ಸಂಯೋಜಕರೇ 
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( M1 ( wdt:P162|wdt:P272 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P272 ) ( ?x0 ) ) . ( M1 ( wdt:P106 ) ( wd:Q36834 ) ) . ( M1 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M1 ನ ಸಂಯೋಜಕರು ಚಿತ್ರಕಥೆಗಾರರೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q69423232 ) ) . ( M1 ( wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P86 ) ( ?x0 ) ) . ( M1 ( wdt:P106 ) ( wd:Q69423232 ) ) rb
+
+Q: M1 ನ ಸಂಯೋಜಕರು ಸಿನಿಮಾಟೋಗ್ರಾಫರ್ ಆಗಿದ್ದರೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P344 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 ) ( M1 ) ) rb
+
+Q: M1 ನ ಯಾವ ಉತ್ತರಭಾಗವನ್ನು M0 ವಿತರಿಸಿದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 ) ( M0 ) ) . ( ?x0 ( wdt:P155 ) ( M1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 ) ( M0 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( M1 ) ) rb
+
+Q: M1 ನ ಯಾವ ಉತ್ತರಭಾಗದಲ್ಲಿ M0 ನಟಿಸಿದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P155 ) ( M1 ) ) . ( ?x0 ( wdt:P161 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P155 ) ( M0 ) ) . ( ?x0 ( wdt:P161 ) ( M1 ) ) rb
+
+Q: M0 ನ ಸಂಸ್ಥಾಪಕರು M1 ನ ಪೋಷಕರಾಗಿದ್ದರೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( M1 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( M1 ( wdt:P40|wdt:P355 ) ( ?x0 ) ) rb
+
+Q: M0 ನ ಒಡಹುಟ್ಟಿದವರು M1 ನ ಉದ್ಯೋಗಿಯೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P108 ) ( M1 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( M1 ( wdt:P108 ) ( ?x0 ) ) rb
+
+Q: M0 ನ ಯಾವ ಉದ್ಯೋಗದಾತರು M1 ನ ವಿತರಕರಾಗಿದ್ದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( M1 ( wdt:P750 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P108 ) ( ?x1 ) ) . ( M1 ( wdt:P750 ) ( ?x1 ) ) rb
+
+Q: M1 ನ ಯಾವ ಉದ್ಯೋಗದಾತರು M0 ನ ಪೋಷಕರಾಗಿದ್ದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P108 ) ( ?x0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P108 ) ( ?x1 ) ) . ( M0 ( wdt:P108 ) ( ?x1 ) ) . ( ?x1 ( wdt:P40|wdt:P355 ) ( M1 ) ) rb
+
+Q: ಒಬ್ಬ ಕಾಸ್ಟ್ಯೂಮ್ ಡಿಸೈನರ್ ನ ಸಂಗಾತಿ M0 ಅವರ ಒಡಹುಟ್ಟಿದವರೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( M1 ( wdt:P3373 ) ( ?x0 ) ) rb
+
+Q: M2 ನ ಸ್ವೀಡಿಷ್ ಪೋಷಕರು ಒಬ್ಬ ಕಾಸ್ಟ್ಯೂಮ್ ಡಿಸೈನರ್ ಆಗಿದ್ದರೇ 
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( M2 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P40|wdt:P355 ) ( M2 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) . ( M2 ( wdt:P106 ) ( wd:Q1323191 ) ) rb
+
+Q: M2 ನ ಸಂಗಾತಿಯು ಜಾಪಾನಿ ಸಿನಿಮಾಟೋಗ್ರಾಫರ್ ಆಗಿದ್ದಾರಾ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q17 ) ) . ( ?x0 ( wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q17 ) ) . ( FILTER ( M2 != ?x0 ) ) . ( M2 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M2 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M0 ಅವರು ಒಬ್ಬ ಚಲನಚಿತ್ರ ನಿರ್ದೇಶಕರ ಯಾವ ಉದ್ಯೋಗದಾತ ಸಂಸ್ಥೆಯನ್ನು ಸ್ಥಾಪಿಸಿದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x1 ( wdt:P108 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q2526255 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P112 ) ( ?x1 ) ) . ( ?x2 ( wdt:P108 ) ( ?x1 ) ) . ( ?x2 ( wdt:P106 ) ( wd:Q2526255 ) ) . ( ?x2 ( wdt:P31 ) ( wd:Q5 ) ) rb
+
+Q: ಒಬ್ಬ ಕಾಸ್ಟ್ಯೂಮ್ ಡಿಸೈನರ್ ನ ಉದ್ಯೋಗದಾತರು M0 ನ ನಿರ್ಮಾಪಕರೇ
+ Gold: ASK WHERE lb ( ?x1 ( wdt:P108 ) ( ?x0 ) ) . ( M0 ( wdt:P272 ) ( ?x0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M1 ) ) rb
+
+Q: ಒಬ್ಬ ವಸ್ತ್ರ ವಿನ್ಯಾಸಕರ ಒಡಹುಟ್ಟಿದವರು M0 ಅವರ ಸಂಗಾತಿಯೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( ?x1 ) ) . ( ?x0 ( wdt:P26 ) ( M0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( M1 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M0 ನ ಯಾವ ಉದ್ಯೋಗದಾತರು ಒಂದು ಕಂಪನಿಯ ಪೋಷಕ ಕಂಪನಿ 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P108 ) ( ?x1 , M0 ) ) . ( ?x1 ( wdt:P40|wdt:P355 ) ( ?x2 ) ) . ( ?x2 ( wdt:P31 ) ( wd:Q4830453 ) ) rb
+
+Q: M0 ನ ಯಾವ ಉದ್ಯೋಗದಾತರು ಒಂದು ಚಲನಚಿತ್ರದ ವಿತರಕರಾಗಿದ್ದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( ?x1 ( wdt:P750 ) ( ?x0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x1 ( wdt:P750 ) ( ?x0 ) ) . ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) rb
+
+Q: M1 ನ ನಿರ್ಮಾಪಕ ಮತ್ತು ವಿತರಕರು M0 ನಿಂದ ಸ್ಥಾಪಿಸಲ್ಪಟ್ಟಿತೇ  
+ Gold: ASK WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P750 ) ( ?x0 ) ) . ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) rb
+
+Q: ಒಬ್ಬ ಕಾಸ್ಟ್ಯೂಮ್ ಡಿಸೈನರ್ M2 ರ ಸ್ವೀಡಿಷ್ ಸಂಗಾತಿಯೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) . ( ?x0 ( wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( M2 != ?x0 ) ) . ( M2 ( wdt:P27 ) ( wd:Q34 ) ) . ( M2 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M0 ರ ಯಾವ ಸಂಗಾತಿ ಮತ್ತು ಒಡಹುಟ್ಟಿದವರು M1 ಅನ್ನು ಮದುವೆಯಾದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M0 , M1 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+
+Q: M1 ನ ಯಾವ ವಿತರಕರು ಮತ್ತು ನಿರ್ಮಾಪಕರು M0 ಅನ್ನು ಸ್ಥಾಪಿಸಿದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 ) ( M0 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( ?x1 ) ) . ( M1 ( wdt:P750 , wdt:P272 ) ( ?x1 ) ) rb
+
+Q: M1 ನ ಸ್ಥಾಪಕರು M0 ನ ಡಚ್ ಸಹೋದರರೇ
+ Gold: ASK WHERE lb ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29999 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( M1 ( wdt:P27 ) ( wd:Q29999 ) ) . ( M1 ( wdt:P3373 ) ( ?x0 ) ) rb
+
+Q: M0 ನ ಜರ್ಮನ್ ಒಡಹುಟ್ಟಿದವರು M1 ನ ಉದ್ಯೋಗಿಯೇ 
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P108 ) ( M1 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q183 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P27 ) ( wd:Q183 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( M1 ( wdt:P108 ) ( ?x0 ) ) rb
+
+Q: M1 ನ ಯಾವ ವಿತರಕರು ಮತ್ತು ನಿರ್ಮಾಪಕರು M0 ನಿಂದ ಸ್ಥಾಪಿಸಲ್ಪಟ್ಟಿತು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 ) ( M0 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( ?x1 ) ) . ( M1 ( wdt:P750 , wdt:P272 ) ( ?x1 ) ) rb
+
+Q: M0 ನ ಫ್ರೆಂಚ್ ಸಹೋದರ ಒಂದು ಕಂಪನಿಯ ಸಂಸ್ಥಾಪಕರೇ 
+ Gold: ASK WHERE lb ( ?x1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q142 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P27 ) ( wd:Q142 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( ?x0 ( wdt:P112 ) ( M1 ) ) . ( M1 ( wdt:P3373 ) ( ?x0 ) ) rb
+
+Q: M0 M2 ಇಂದ ನಿರ್ಮಿಸಲ್ಪಟ್ಟು M1 ಇಂದ ಬರೆಯಲ್ಪಟ್ಟಿತೇ 
+ Gold: ASK WHERE lb ( M0 ( wdt:P162|wdt:P272 ) ( M2 ) ) . ( M0 ( wdt:P58 ) ( M1 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P272 ) ( M0 ) ) . ( M2 ( wdt:P58 ) ( M0 ) ) rb
+
+Q: M1 ನ ಯಾವ ವಿತರಕರು ಮತ್ತು ನಿರ್ಮಾಪಕರು M0 ಅನ್ನು ಸ್ಥಾಪಿಸಿದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 ) ( M0 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( ?x1 ) ) . ( M1 ( wdt:P750 , wdt:P272 ) ( ?x1 ) ) rb
+
+Q: M0 ರ ಪೋಷಕರು, ಸಂಗಾತಿ ಮತ್ತು ಒಡಹುಟ್ಟಿದವರು M1 ರನ್ನು ಮದುವೆಯಾದರೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P40|wdt:P355 , wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M0 , M1 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P40|wdt:P355 , wdt:P3373 , wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( M1 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: ಒಬ್ಬ  ಕಾಸ್ಟ್ಯೂಮ್ ಡಿಸೈನರ್ M3 ರ ಕೆನಡಾದ ಪುರುಷ ಸಂಗಾತಿಯೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581097 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q16 ) ) . ( ?x0 ( wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581097 ) ) . ( FILTER ( M3 != ?x0 ) ) . ( M3 ( wdt:P21 ) ( wd:Q6581097 ) ) . ( M3 ( wdt:P27 ) ( wd:Q16 ) ) . ( M3 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M1 ನ ಯಾವ ಉತ್ತರಭಾಗವನ್ನು M0 ವಿತರಿಸಿ ನಿರ್ಮಿಸಿದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 , wdt:P162|wdt:P272 ) ( M0 ) ) . ( ?x0 ( wdt:P155 ) ( M1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 ) ( M0 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( M1 ) ) rb
+
+Q: M0 ಯಾವ ಕಂಪನಿಯ ಅಧೀನ ಮತ್ತು ಪೋಷಕ ಸಂಸ್ಥೆಯನ್ನು ಸ್ವಾಧೀನಪಡಿಸಿಕೊಂಡರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P127 ) ( M0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 , wdt:P749 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P127 ) ( ?x1 ) ) . ( ?x0 ( wdt:P127 ) ( M0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) . ( ?x1 ( wdt:P127 ) ( M0 ) ) rb
+
+Q: M2 ನ ನಿರ್ಮಾಪಕ ಮತ್ತು ವಿತರಕ ಸಂಸ್ಥೆಯನ್ನು M0 ಮತ್ತು M1 ಸ್ಥಾಪಿಸಿದರೇ 
+ Gold: ASK WHERE lb ( M2 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 , M1 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P112 ) ( M0 , M1 ) ) . ( M2 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) rb
+
+Q: M0 ನ ಪ್ರಭಾವಿತಗೊಳಿಸಿದ ನಟರು M0 ನ ಒಡಹುಟ್ಟಿದವರೇ 
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P453 ) ( ?x0 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( M1 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M1 ( wdt:P3373 ) ( ?x0 ) ) rb
+
+Q: M0 ರ ಸ್ಪ್ಯಾನಿಷ್ ಒಡಹುಟ್ಟಿದ ಚಲನಚಿತ್ರ ವಸ್ತ್ರ ವಿನ್ಯಾಸಕರು ಯಾರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x1 ( wdt:P2515 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x1 != M0 ) ) rb
+
+Q: M3 ನ ಸ್ವೀಡಿಷ್ ಸ್ತ್ರೀ ಸಂಗಾತಿ ಒಬ್ಬ ಸಂಯೋಜಕರೇ 
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) . ( ?x0 ( wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) . ( FILTER ( M3 != ?x0 ) ) . ( M3 ( wdt:P106 ) ( wd:Q36834 ) ) . ( M3 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M0 ರ ಯಾವ ಸ್ತ್ರೀ ಒಡಹುಟ್ಟಿದವರು ಮತ್ತು ಸಂಗಾತಿಯು M2 ಅನ್ನು ಮದುವೆಯಾದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M0 , M2 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P112 ) ( ?x1 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x1 ( wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x1 != M2 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ನಿಂದ M0 ಅನ್ನು ನಿರ್ಮಿಸಿ ಸಂಪಾದಿಸಲಾಗಿದೆಯೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P272 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M0 , M1 , ಮತ್ತು M2 ನಿಂದ ಏನು ನಿರ್ಮಿಸಿ ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಲ್ಪಟ್ಟಿದೆ 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1431 , wdt:P162|wdt:P272 ) ( M0 , M1 , M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1431 ) ( M0 , M1 , M2 ) ) rb
+
+Q: M0 ನ ಯಾವ ಮಹಿಳಾ ಒಡಹುಟ್ಟಿದವರು M1 ನ ಒಡಹುಟ್ಟಿದವರು ಮತ್ತು ಸಂಗಾತಿಯಾಗಿದ್ದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P26 ) ( M1 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P3373 ) ( ?x1 ) ) . ( ?x1 ( wdt:P3373 , wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x1 != M1 ) ) rb
+
+Q: M1 ಮತ್ತು M2 ನಿಂದ M0 ಅನ್ನು ನಿರ್ಮಿಸಿ, ನಿರ್ದೇಶಿಸಿ ಮತ್ತು ಬರೆಯಲಾಗಿದೆಯೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P272 , wdt:P58 ) ( M1 , M2 ) ) rb
+
+Q: ಒಬ್ಬ ಕಾಸ್ಟ್ಯೂಮ್ ಡಿಸೈನರ್ M1 , M2 , ಮತ್ತು M3 ಯಲ್ಲಿ ಅಭಿನಯಿಸಿ, ಅವುಗಳ ಸಂಪಾದಕರಾಗಿದ್ದರೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( M1 ( wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: M1 , M2 , M3 , ಮತ್ತು M4 ನ ಸಂಪಾದಕ ಮತ್ತು ತಾರೆ ಯಾರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M4 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M4 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: M0 , M1 , M2 , ಮತ್ತು M3 ಏನನ್ನು ಸಂಪಾದಿಸಿ ನಿರ್ದೇಶಿಸಿದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 ) ( M0 , M1 , M2 , M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 , M2 , M3 ) ) rb
+
+Q: M0 ರ ಕಥೆ ಮತ್ತು ನಿರ್ದೇಶನ M1 , M2 , M3 , ಮತ್ತು M4 ಅವರಿಂದ ಮಾಡಲ್ಪಟ್ಟಿದೆಯೇ 
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( M1 ) ) . ( M2 ( wdt:P57 ) ( M0 ) ) . ( M3 ( wdt:P57 ) ( M0 ) ) . ( M4 ( wdt:P57 ) ( M0 ) ) rb
+
+Q: M0, M1 ಮತ್ತು M2 ನ ಯಾವ ಬರಹಗಾರ ಮತ್ತು ಸಂಪಾದಕರನ್ನು M3 ನೇಮಿಸಿಕೊಂಡಿದೆ
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 ) ( ?x1 ) ) . ( M0 ( wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M0 ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮತ್ತು ನಿರ್ಮಾಣ ಮಾಡಿರುವುದು M1, M2, M3 ಮತ್ತು M4 ಅವರೇ 
+ Gold: ASK WHERE lb ( M0 ( wdt:P1431 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 , M4 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P1431 , wdt:P162|wdt:P272 ) ( M0 ) ) . ( M2 ( wdt:P1431 ) ( M0 ) ) . ( M3 ( wdt:P1431 ) ( M0 ) ) . ( M4 ( wdt:P1431 ) ( M0 ) ) rb
+
+Q: M0 ಅನ್ನು ಸಂಪಾದಿಸಿ ,ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿ , ನಿರ್ಮಿಸಿ , ಬರೆದವರು M1 ಅವರೇ 
+ Gold: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P1431 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P162|wdt:P272 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M1 , M2 , M3 , ಮತ್ತು M4 ನ ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು ನಿರ್ದೇಶಕರು ಒಬ್ಬ ಚಲನಚಿತ್ರ ನಿರ್ಮಾಪಕರೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M4 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P344 ) ( ?x0 ) ) . ( M3 ( wdt:P344 ) ( ?x0 ) ) . ( M4 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) rb
+
+Q: M1 , M2 , M3 , ಮತ್ತು M4 ನ ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು ನಿರ್ದೇಶಕ ಒಬ್ಬ ನಟರೇ 
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M4 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P344 ) ( ?x0 ) ) . ( M4 ( wdt:P57 ) ( ?x0 ) ) rb
+
+Q: M0 , M1 , ಮತ್ತು M2 ರವರು ಏನನ್ನು ಬರೆದು , ಕಾರ್ಯನಿರ್ವಾಹಕ ನಿರ್ಮಾಣ ಮಾಡಿ , ನಿರ್ದೇಶಿಸಿದ್ದಾರೆ
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( M0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x1 ) ) . ( M1 ( wdt:P58 ) ( ?x1 ) ) . ( M2 ( wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M0 , M1 , M2 , M3 , ಮತ್ತು M4 ಅವರು ಏನನ್ನು ನಿರ್ದೇಶಿಸಿ ಬರೆದಿದ್ದಾರೆ
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P58 ) ( M0 , M1 , M2 , M3 , M4 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 , M2 , M3 , M4 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ಅವರಿಂದ M0 ಅನ್ನು ಬರೆದು , ಸಂಪಾದಿಸಿ , ನಿರ್ದೇಶಿಸಲಾಗಿದೆಯೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M0, M1 ಮತ್ತು M2 ರ ಯಾವ ಬರಹಗಾರ ಮತ್ತು ಛಾಯಾಗ್ರಾಹಕ M3 ಮತ್ತು M4 ಅನ್ನು ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿದ್ದಾರೆ 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 ) ( ?x0 ) ) . ( M4 ( wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P344 ) ( M0 , M1 , M2 ) ) . ( ?x0 ( wdt:P58 ) ( ?x1 ) ) . ( M3 ( wdt:P1431 ) ( ?x1 ) ) . ( M4 ( wdt:P1431 ) ( ?x1 ) ) rb
+
+Q: ಯಾವ ಚಲನಚಿತ್ರ ನಿರ್ಮಾಪಕರು M1 ಮತ್ತು M2 ನ ಸಂಪಾದಕರು, ಕಾರ್ಯನಿರ್ವಾಹಕ ನಿರ್ಮಾಪಕರು, ನಿರ್ದೇಶಕರು ಮತ್ತು ಬರಹಗಾರರಾಗಿದ್ದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x1 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x1 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ಅವರಿಂದ M0 ಅನ್ನು ಬರೆದು , ನಿರ್ದೇಶಿಸಿ  ಮತ್ತು ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಲಾಗಿದೆಯೇ 
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M0 ) ) . ( M2 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M0 ) ) . ( M3 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ಅವರಿಂದ M0 ಅನ್ನು ಬರೆದು , ನಿರ್ದೇಶಿಸಿ , ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಲಾಗಿದೆಯೇ 
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M0 ) ) . ( M2 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M0 ) ) . ( M3 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M0 ಮತ್ತು M1 ರ ಯಾವ ಬರಹಗಾರ, ನಿರ್ದೇಶಕ ಮತ್ತು ಕಾರ್ಯನಿರ್ವಾಹಕ ನಿರ್ಮಾಪಕರು M2 ಮತ್ತು M3 ಅನ್ನು ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿದ್ದಾರೆ 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P1431 ) ( ?x1 ) ) . ( M2 ( wdt:P1431 ) ( ?x1 ) ) . ( M3 ( wdt:P1431 ) ( ?x1 ) ) rb
+
+Q: M3 ಯ ಸಂಯೋಜಕರು M0, M1 ಮತ್ತು M2 ನ ಸ್ಟಾರ್, ನಿರ್ದೇಶಕ ಮತ್ತು ಛಾಯಾಗ್ರಾಹಕರೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 , wdt:P86 ) ( ?x0 ) ) rb
+
+Q: M3 ಮತ್ತು M4 ರ ಸಂಯೋಜಕರು M0 , M1 , ಮತ್ತು M2 ನ ಸಂಪಾದಕ ಮತ್ತು ತಾರೆಯೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P86 ) ( ?x0 ) ) . ( M4 ( wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P86 ) ( ?x0 ) ) . ( M4 ( wdt:P86 ) ( ?x0 ) ) rb
+
+Q: M0 , M1 , ಮತ್ತು M2 ನ ಯಾವ ಬರಹಗಾರ ಮತ್ತು ಸಂಪಾದಕ M3 ರನ್ನು ವಿವಾಹವಾಗಿ , ಪ್ರಭಾವ ಬೀರಿದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 , wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 ) ( ?x1 ) ) . ( M0 ( wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P58 ) ( ?x1 ) ) . ( M2 ( wdt:P58 ) ( ?x1 ) ) . ( ?x1 ( wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x1 != M3 ) ) rb
+
+Q: M0 ಮತ್ತು M1 ರ ಯಾವ ಬರಹಗಾರ, ತಾರೆ, ನಿರ್ದೇಶಕ ಮತ್ತು ಸಂಯೋಜಕರು M2 ನ ನಿರ್ದೇಶಕರಾಗಿದ್ದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P57 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P57 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( ?x1 ) ) . ( M2 ( wdt:P161 , wdt:P57 , wdt:P86 , wdt:P58 ) ( ?x1 ) ) rb
+
+Q: ಒಬ್ಬ ಸಿನಿಮಾಟೋಗ್ರಾಫರ್ M0 ಮತ್ತು M1 ನ ಸ್ಟಾರ್, ಬರಹಗಾರ, ಸಂಪಾದಕ, ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು ನಿರ್ದೇಶಕರಾಗಿದ್ದರೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: M1 , M2 , M3 , ಮತ್ತು M4 ನ ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು ತಾರೆ M0 ನ ಸಂಪಾದಕ ಮತ್ತು ಕಾರ್ಯನಿರ್ವಾಹಕ ನಿರ್ಮಾಪಕರೇ
+ Gold: ASK WHERE lb ( M1 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M4 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1431 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P1431 ) ( ?x0 ) ) . ( M4 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: M6 ನ ಯಾವ ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು ಸಂಪಾದಕರು M0, M1, M2, M3, M4 ಮತ್ತು M5 ರಲ್ಲಿ ನಟಿಸಿದ್ದಾರೆ 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 ) ( ?x0 ) ) . ( M4 ( wdt:P161 ) ( ?x0 ) ) . ( M5 ( wdt:P161 ) ( ?x0 ) ) . ( M6 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 ) ( ?x1 , M0 , M1 , M2 , M3 , M4 , M5 ) ) . ( M6 ( wdt:P344 , wdt:P1040 ) ( ?x1 ) ) rb
+
+Q: M0 ಮತ್ತು M1 ನ ಯಾವ ಬರಹಗಾರ, ಸಂಪಾದಕ ಮತ್ತು ನಿರ್ದೇಶಕರು M2 ರನ್ನು ಪ್ರಭಾವಿಸಿ ಮದುವೆಯಾದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 , wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P58 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( ?x1 ( wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x1 != M2 ) ) rb
+
+Q: M3 ನ ಸಂಪಾದಕರು , ಕಾರ್ಯನಿರ್ವಾಹಕ ನಿರ್ಮಾಪಕರು ಮತ್ತು ಛಾಯಾಗ್ರಾಹಕರು M0 , M1 , ಮತ್ತು M2 ನ ತಾರೆ ಮತ್ತು ಬರಹಗಾರರೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: M1 ಮತ್ತು M2 ನ ಯಾವ ಬರಹಗಾರ , ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಪಕ , ಮತ್ತು ಸಂಪಾದಕ M0 ರ ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ , ಮತ್ತು ಸಂಪಾದನೆ ಮಾಡಿದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 ) ( M0 ) ) . ( ?x0 ( wdt:P1431 ) ( M0 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M0 ಮತ್ತು M1 M2 ನ ಕಾರ್ಯನಿರ್ವಾಹಕ ನಿರ್ಮಾಪಕ ಮತ್ತು ಛಾಯಾಗ್ರಾಹಕನ ಸ್ಟಾರ್, ಸಂಪಾದಕ, ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು ಬರಹಗಾರರಾಗಿದ್ದರೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: ಚಲನಚಿತ್ರ ಸಂಪಾದಕರ ಸಂಗಾತಿಯು M0 , M1 , M2 , M3 , ಮತ್ತು M4 ಅನ್ನು ಬರೆದು ಸಂಪಾದಿಸಿದ್ದಾರೆಯೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( FILTER ( ?x0 != ?x1 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P58 ) ( ?x0 ) ) . ( FILTER ( M4 != ?x0 ) ) . ( M4 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: ಯಾವ ಮಹಿಳಾ ಚಲನಚಿತ್ರ ನಿರ್ದೇಶಕರು M0, M1 ಮತ್ತು M2 ಅನ್ನು ಸಂಪಾದಿಸಿದ್ದಾರೆ, ಬರೆದಿದ್ದಾರೆ ಮತ್ತು ನಿರ್ದೇಶಿಸಿದ್ದಾರೆ
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) rb
+
+Q: M0 , M1 , M2 , ಮತ್ತು M3 ನ ಯಾವ ಬರಹಗಾರ ಮತ್ತು ನಿರ್ದೇಶಕರು M5 ನ ಕೆನಡಾದ ಸಂಪಾದಕರಾಗಿದ್ದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M5 ( wdt:P1040 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q16 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 , M2 , M3 ) ) . ( ?x0 ( wdt:P1040 ) ( ?x1 ) ) . ( M5 ( wdt:P57 ) ( ?x1 ) ) . ( ?x1 ( wdt:P27 ) ( wd:Q16 ) ) rb
+
+Q: M4 ನ ನಿರ್ದೇಶಕ ಮತ್ತು ಕಾರ್ಯನಿರ್ವಾಹಕ ನಿರ್ಮಾಪಕರು M0, M1, M2 ಮತ್ತು M3 ಅನ್ನು ನಿರ್ದೇಶಿಸಿದ್ದಾರೆಯೇ ಮತ್ತು ಬರೆದಿದ್ದಾರೆಯೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: M0 ನ ಸಂಸ್ಥಾಪಕ ಮತ್ತು ಉದ್ಯೋಗಿ M1 ಮತ್ತು M2 ನಿಂದ ಉದ್ಯೋಗಿಯಾಗಿದ್ದರೇ ಮತ್ತು M3 ಮತ್ತು M4 ನಿಂದ ಉದ್ಯೋಗಿಯಾಗಿದ್ದರೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 , M2 , M3 , M4 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M1 , M2 , M3 , M4 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ಯಾವ ಚಲನಚಿತ್ರವನ್ನು ಬರೆದರು , ಸಂಪಾದಿಸಿದರು , ನಿರ್ಮಿಸಿದರು ಮತ್ತು ನಿರ್ದೇಶಿಸಿದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M0 ಮತ್ತು M1 ನ ಯಾವ ಬರಹಗಾರ, ಛಾಯಾಗ್ರಾಹಕ, ತಾರೆ, ಸಂಪಾದಕ ಮತ್ತು ನಿರ್ದೇಶಕರು M2 ನ ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಪಕರಾಗಿದ್ದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( ?x1 ) ) . ( M2 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P1431 ) ( ?x1 ) ) rb
+
+Q: M3 ನ ನಿರ್ದೇಶಕ, ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು ಬರಹಗಾರ M0, M1 ಮತ್ತು M2 ಅನ್ನು ಬರೆದಿದ್ದಾರೆ ಮತ್ತು ಸಂಪಾದಿಸಿದ್ದಾರೆಯೇ
+ Gold: ASK WHERE lb ( M3 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M4 ನ ಅಮೇರಿಕ ದೇಶದ ಛಾಯಾಗ್ರಾಹಕ M0 , M1 , ಮತ್ತು M2 ಅನ್ನು ಸಂಪಾದಿಸಿ, ನಿರ್ದೇಶಿಸಿ ಮತ್ತು ಬರೆದಿದ್ದಾರೆಯೇ
+ Gold: ASK WHERE lb ( M4 ( wdt:P344 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) . ( M4 ( wdt:P344 ) ( ?x0 ) ) rb
+
+Q: M0, M1 ಮತ್ತು M2 ನ ಯಾವ ಬರಹಗಾರ, ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು ನಿರ್ದೇಶಕರು M3 ಅನ್ನು ಬರೆದಿದ್ದಾರೆ ಮತ್ತು ಕಾರ್ಯನಿರ್ವಾಹಕರು ನಿರ್ಮಿಸಿದ್ದಾರೆ
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 , M2 ) ) . ( ?x0 ( wdt:P58 ) ( ?x1 ) ) . ( M3 ( wdt:P58 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q222344 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ಅವರು ಯಾವ ಚಲನಚಿತ್ರವನ್ನು ನಿರ್ದೇಶಿಸಿ, ನಿರ್ಮಿಸಿ, ಬರೆದು ಸಂಪಾದಿಸಿದ್ದಾರೆ
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M2 , M3 , M4 , M5 , ಮತ್ತು M6 ಅನ್ನು M0 ಬರೆದು ಸಂಪಾದಿಸಿದವರು ವಸ್ತ್ರ ವಿನ್ಯಾಸಕರೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M5 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M6 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M5 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M3 ನ ನಿರ್ದೇಶಕರು M0 , M1 , ಮತ್ತು M2 ಅನ್ನು ಸಂಪಾದಿಸಿ , ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿ , ಬರೆದು ನಿರ್ದೇಶಿಸಿದ್ದಾರೆಯೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+
+Q: M3 ನ ನಿರ್ದೇಶಕರು M0 , M1 , ಮತ್ತು M2 ಅನ್ನು ಸಂಪಾದಿಸಿ , ಬರೆದು , ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿ , ನಿರ್ದೇಶಿಸಿದ್ದಾರೆಯೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ರವರು ನಿರ್ಮಿಸಿದ, ನಿರ್ದೇಶಿಸಿದ ಮತ್ತು ಬರೆದ ಚಲನಚಿತ್ರ ಯಾವುದು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) . ( M1 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x1 ) ) . ( M2 ( wdt:P57 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( M3 ( wdt:P57 , wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ನ ಯಾವ ಸಂಪಾದಕ ಮತ್ತು ಛಾಯಾಗ್ರಾಹಕರು M0 ಅನ್ನು ಸಂಪಾದಿಸಿ, ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿ ನಿರ್ದೇಶಿಸಿದ್ದಾರೆ
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 ) ) . ( ?x0 ( wdt:P1040 ) ( ?x1 ) ) . ( M1 ( wdt:P344 , wdt:P1040 , wdt:P1431 ) ( ?x1 ) ) . ( M2 ( wdt:P344 ) ( ?x1 ) ) . ( M3 ( wdt:P344 ) ( ?x1 ) ) rb
+
+Q: M2, M3 ಮತ್ತು M4 ಅನ್ನು ಸಂಪಾದನೆ ಮಾಡಿದವರು, ನಿರ್ದೇಶಿಸಿದವರು ಮತ್ತು M0 ನಲ್ಲಿ ನಟಿಸಿದವರು ಛಾಯಾಗ್ರಾಹಕರೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M2 ( wdt:P161 , wdt:P57 , wdt:P1040 ) ( M0 ) ) . ( M3 ( wdt:P161 , wdt:P57 , wdt:P1040 ) ( M0 ) ) . ( M4 ( wdt:P161 , wdt:P57 , wdt:P1040 ) ( M0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M2 ( wdt:P57 , wdt:P1040 ) ( M0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 ) ( M0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 ) ( M0 ) ) rb
+
+Q: M1 ಮತ್ತು M2 ಪ್ರಭಾವಕ್ಕೊಳಗಾದ ನಟ ಮತ್ತು M4 ಮತ್ತು M5 ರನ್ನು ವಿವಾಹವಾದವರು M3 ನ ಸ್ಥಾಪಕರೇ 
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( M3 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M4 , M5 ) ) . ( FILTER ( ?x0 != M4 ) ) . ( FILTER ( ?x0 != M5 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( ?x0 ( wdt:P737 ) ( M1 , M2 , M3 ) ) . ( FILTER ( M3 != M4 ) ) . ( M3 ( wdt:P26 ) ( ?x0 , M4 , M5 ) ) rb
+
+Q: M0 ಮತ್ತು M1 ನ ಯಾವ ಉದ್ಯೋಗಿ ಮತ್ತು ಸಂಸ್ಥಾಪಕರು M2, M3 ಮತ್ತು M4 ರಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತಿದ್ದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 , M2 , M3 , M4 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P112 ) ( ?x1 , M0 , M1 ) ) . ( M2 ( wdt:P112 ) ( ?x1 ) ) . ( M3 ( wdt:P112 ) ( ?x1 ) ) . ( ?x1 ( wdt:P108 ) ( M2 , M4 ) ) rb
+
+Q: M3 ಯ ಯಾವ ಬರಹಗಾರ, ಛಾಯಾಗ್ರಾಹಕ, ತಾರೆ ಮತ್ತು ಸಂಗೀತ ಸಂಯೋಜಕರು M0, M1 ಮತ್ತು M2 ಅನ್ನು ಸಂಪಾದಿಸಿ ನಿರ್ದೇಶಿಸಿದ್ದಾರೆ
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M3 ( wdt:P161 , wdt:P344 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 , M2 ) ) . ( ?x0 ( wdt:P1040 ) ( ?x1 ) ) . ( M3 ( wdt:P161 , wdt:P344 , wdt:P86 , wdt:P58 ) ( ?x1 ) ) . ( FILTER ( ?x0 != ?x1 ) ) rb
+
+Q: M2 ನ ಸಂಪಾದಕ ಮತ್ತು ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಪಕರು M0 ಮತ್ತು M1 ಅನ್ನು ನಿರ್ದೇಶಿಸಿ, ಸಂಪಾದಿಸಿ, ಬರೆದು ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿದ್ದಾರೆಯೇ 
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: M4, M5 ಮತ್ತು M6 ಅನ್ನು ಸ್ಥಾಪಿಸಿದ ಚಲನಚಿತ್ರ ನಿರ್ಮಾಪಕರು M1, M2 ಮತ್ತು M3 ಅನ್ನು ನಿರ್ದೇಶಿಸಿ ಬರೆದಿದ್ದಾರೆಯೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( M5 ( wdt:P112 ) ( ?x0 ) ) . ( M6 ( wdt:P112 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) . ( M4 ( wdt:P57 ) ( ?x0 ) ) . ( M5 ( wdt:P58 ) ( ?x0 ) ) . ( M6 ( wdt:P57 ) ( ?x0 ) ) . ( M6 ( wdt:P57 ) ( ?x0 ) ) rb
+
+Q: M2 ನ ಯಾವ ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಪಕ, ಸಂಪಾದಕ, ಸಂಗೀತ ಸಂಯೋಜಕ, ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು ನಿರ್ದೇಶಕ M0 ಮತ್ತು M1 ಅನ್ನು ಸಂಪಾದಿಸಿ ಬರೆದಿದ್ದಾರೆ
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M2 ( wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P86 , wdt:P1431 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P58 ) ( ?x1 ) ) . ( M2 ( wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P86 ) ( ?x1 ) ) rb
+
+Q: M0 ನ ಯಾವ ಅಮೇರಿಕ ದೇಶದ ಸಂಸ್ಥಾಪಕ ಮತ್ತು ಉದ್ಯೋಗಿಯು M1, M2, M3 ಮತ್ತು M4 ರಲ್ಲಿ ಕೆಲಸ ಮಾಡುಗಟ್ಟಿದ್ದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 , M2 , M3 , M4 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 , M2 , M3 , M4 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) rb
+
+Q: M0 ಮತ್ತು M1 ರ ಯಾವ ತಾರೆ , ಬರಹಗಾರ ಮತ್ತು ಸಂಪಾದಕ M2 ಮತ್ತು M3 ಯ ಛಾಯಾಗ್ರಾಹಕ , ನಿರ್ದೇಶಕ , ಸಂಪಾದಕ ಮತ್ತು ಸಂಯೋಜಕರಾಗಿದ್ದಾರೆ  
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( ?x1 ) ) . ( M2 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x1 ) ) . ( M3 ( wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M0 ನ ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಪಕ ಮತ್ತು ಬರಹಗಾರರು M1, M2 , M3 , M4 , M5 ಮತ್ತು M6 ರಲ್ಲಿ ಕೆಲಸಕ್ಕಿದ್ದರೇ 
+ Gold: ASK WHERE lb ( M0 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M1 , M2 , M3 , M4 , M5 , M6 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P108 ) ( ?x0 ) ) . ( M2 ( wdt:P108 ) ( ?x0 ) ) . ( M3 ( wdt:P108 ) ( ?x0 ) ) . ( M4 ( wdt:P108 ) ( ?x0 ) ) . ( M5 ( wdt:P108 ) ( ?x0 ) ) rb
+
+Q: M0, M1, M2 ಮತ್ತು M3 ನ ಯಾವ ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು ಬರಹಗಾರರು M4 ಅನ್ನು ನಿರ್ದೇಶಿಸಿ, ಬರೆದು ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿದ್ದಾರೆ 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 , M2 , M3 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( ?x1 ) ) . ( M4 ( wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M3 ಮತ್ತು M4 ನ ಯಾವ ಛಾಯಾಗ್ರಾಹಕ, ನಿರ್ದೇಶಕ ಮತ್ತು ಸಂಪಾದಕರು M0, M1 ಮತ್ತು M2 ಗಳ ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿದ್ದಾರೆ 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M3 ( wdt:P344 , wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M4 ( wdt:P344 , wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M0 ( wdt:P1431 ) ( ?x0 ) ) . ( M1 ( wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 , M2 ) ) . ( ?x0 ( wdt:P1431 ) ( M3 , M4 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( ?x1 ) ) . ( M4 ( wdt:P344 , wdt:P57 ) ( ?x1 ) ) rb
+
+Q: M0 , M1 , M2 , ಮತ್ತು M3 ಗಳ ನಿರ್ದೇಶಕ ಮತ್ತು ಸಂಪಾದಕರು M4, M5 ಅನ್ನು ಮತ್ತು M6 ರನ್ನು ಮದುವೆಯಾಗಿದ್ದಾರೆಯೇ
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M4 , M5 , M6 ) ) . ( FILTER ( ?x0 != M4 ) ) . ( FILTER ( ?x0 != M5 ) ) . ( FILTER ( ?x0 != M6 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 ) ( ?x0 ) ) . ( M1 ( wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) . ( FILTER ( M4 != M5 ) ) . ( M4 ( wdt:P1040 ) ( ?x0 ) ) . ( M5 ( wdt:P26 ) ( M4 , M6 ) ) rb
+
+Q: M6 ನ ಯಾವ ವಿತರಕರು ಮತ್ತು ನಿರ್ಮಾಪಕರನ್ನು M0, M1, M2, M3, M4 ಮತ್ತು M5 ಸ್ವಾಧೀನಪಡಿಸಿಕೊಂಡಿದೆ
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M6 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( M0 , M1 , M2 , M3 , M4 , M5 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P127 ) ( M0 , M1 , M2 , M3 , M4 , M5 ) ) . ( ?x0 ( wdt:P127 ) ( M1 , M2 , M3 , M4 , M5 ) ) rb
+
+Q: M3 ಮತ್ತು M4 ನ ಯಾವ ಸಂಯೋಜಕ, ಸಂಪಾದಕ ಮತ್ತು ನಿರ್ದೇಶಕರು M5 ಅನ್ನು ನಿರ್ದೇಶಿಸಿ M0, M1 ಮತ್ತು M2 ಗಳನ್ನು ಸಂಪಾದಿಸಿದ್ದಾರೆ
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M3 ( wdt:P57 , wdt:P1040 , wdt:P86 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 , wdt:P86 ) ( ?x0 ) ) . ( M5 ( wdt:P57 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( ?x1 ) ) . ( ?x0 ( wdt:P1040 ) ( M0 , M1 , M2 , M3 , M4 ) ) . ( M5 ( wdt:P57 ) ( ?x1 ) ) rb
+
+Q: M2 ಮತ್ತು M3 ಗಳ ನಿರ್ದೇಶಕ ಮತ್ತು ನಟ M0 ಮತ್ತು M1 ಅನ್ನು ಪ್ರಭಾವಿಸಿದ್ದಾರೆಯೇ
+ Gold: ASK WHERE lb ( M2 ( wdt:P161 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P57 ) ( ?x0 ) ) . ( M0 ( wdt:P737 ) ( ?x0 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P737 ) ( ?x0 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+
+Q: M5 , M6 , ಮತ್ತು M7 ರನ್ನು ವಿವಾಹವಾದ ಮತ್ತು M1 , M2 , ಮತ್ತು M3 ರನ್ನು ಪ್ರಭಾವಿಸಿದ ಚಲನಚಿತ್ರ ಸಂಪಾದಕರು M4 ಅನ್ನು ಸ್ಥಾಪಿಸಿದರೇ 
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( M3 ( wdt:P737 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M5 , M6 , M7 ) ) . ( FILTER ( ?x0 != M5 ) ) . ( FILTER ( ?x0 != M6 ) ) . ( FILTER ( ?x0 != M7 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( M3 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M5 , M6 , M6 ) ) . ( FILTER ( ?x0 != M5 ) ) . ( M4 ( wdt:P112 ) ( ?x0 , M3 , M5 , M6 ) ) rb
+
+Q: M0 , M1 , ಮತ್ತು M2 ನ ಯಾವ ನಿರ್ದೇಶಕ, ತಾರೆ ಮತ್ತು ಬರಹಗಾರ M3 ಯನ್ನು ವಿವಾಹವಾದರು, ಪ್ರಭಾವಿಸಿದರು ಮತ್ತು M3 ಇಂದ ಪ್ರಭಾವಿತರಾದರು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 , wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 , M2 , M3 ) ) . ( ?x0 ( wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+
+Q: M6 ನ ಯಾವ ವಿತರಕರು ಮತ್ತು ನಿರ್ಮಾಪಕರನ್ನು M0 , M1 , M2 , M3 , M4 ಮತ್ತು M5 ಸ್ವಾಧೀನಪಡಿಸಿಕೊಂಡಿತು
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M6 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( M0 , M1 ) ) . ( M2 ( wdt:P127 ) ( ?x0 ) ) . ( M3 ( wdt:P127 ) ( ?x0 ) ) . ( M4 ( wdt:P127 ) ( ?x0 ) ) . ( M5 ( wdt:P127 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P127 ) ( M0 , M1 , M2 , M3 , M4 , M5 ) ) . ( ?x0 ( wdt:P127 ) ( M2 , M3 , M4 , M5 ) ) . ( M6 ( wdt:P750 ) ( ?x1 ) ) rb
+
+Q: M4 ಮತ್ತು M5 ನ ಯಾವ ಸ್ಪೇನ್ ದೇಶದ ತಾರೆ, ಸಂಪಾದಕ ಮತ್ತು ಛಾಯಾಗ್ರಾಹಕರು M0, M1 ಮತ್ತು M2 ರ ಬರಹಗಾರ ಮತ್ತು ನಿರ್ದೇಶಕರಾಗಿದ್ದರು 
+ Gold: ASK WHERE lb ( M4 ( wdt:P161 , wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M5 ( wdt:P161 , wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 , M2 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29 ) ) . ( M4 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M5 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: M1 ಮತ್ತು M2 ಅನ್ನು ಸ್ಥಾಪಿಸಿದ ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು M3, M4 ಮತ್ತು M5 ಅನ್ನು ಸ್ಥಾಪಿಸಿದವರು M6 ರ ಸಂಗಾತಿಯೇ 
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( M2 ( wdt:P112 ) ( ?x0 ) ) . ( M3 ( wdt:P112 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( M5 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M6 ) ) . ( FILTER ( ?x0 != M6 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( M2 ( wdt:P112 ) ( ?x0 ) ) . ( M3 ( wdt:P112 ) ( ?x0 ) ) . ( FILTER ( M4 != M5 ) ) . ( M5 ( wdt:P112 ) ( ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x0 , ?x1 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ನ ಯಾವ ಛಾಯಾಗ್ರಾಹಕ ಮತ್ತು ತಾರೆ M0 ಅನ್ನು ಬರೆದು, ನಿರ್ದೇಶಿಸಿ, ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿ ಸಂಪಾದಿಸಿದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 ) ) . ( ?x0 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x1 ) ) . ( M1 ( wdt:P161 ) ( ?x1 ) ) . ( M2 ( wdt:P161 ) ( ?x1 ) ) . ( M3 ( wdt:P161 ) ( ?x1 ) ) rb
+
+Q: M0 , M1 , M2 , ಮತ್ತು M3 ನ ಯಾವ ಬರಹಗಾರ ಮತ್ತು ಛಾಯಾಗ್ರಾಹಕರು ಒಬ್ಬ ವ್ಯಕ್ತಿಯನ್ನು ವಿವಾಹವಾದರು ಮತ್ತು M4 ಮತ್ತು M5 ಅನ್ನು ಪ್ರಭಾವಿಸಿದರು 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P737 ) ( ?x0 ) ) . ( M5 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q5 ) ) . ( FILTER ( ?x0 != ?x1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P737 ) ( ?x1 ) ) . ( ?x0 ( wdt:P26 ) ( M0 , M1 , M2 , M3 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q5 ) ) . ( M4 ( wdt:P58 ) ( ?x1 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) . ( FILTER ( ?x0 != M2 ) ) . ( FILTER ( ?x0 != M2 ) ) . ( FILTER ( ?x0 != M2 ) ) . ( FILTER ( ?x1 != ?x2 ) ) . ( FILTER ( ?x2 != ?x2 ) ) . ( M3 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M5 ( wdt:P737 ) ( ?x0 , ?x1 ) ) rb
+
+Q: M1 ಮತ್ತು M2 ಅನ್ನು ನಿರ್ದೇಶಿಸಿದ ಛಾಯಾಗ್ರಾಹಕ, M3 ನ ನಿರ್ದೇಶಕರಿಂದ ನಿರ್ದೇಶಿಸಿ, ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿ, ಸಂಪಾದಿಸಿ ಬರೆಯಲ್ಪಟ್ಟಿದೆಯೇ 
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ಅನ್ನು ಬರೆದಿರುವ ಮತ್ತು ಸಂಪಾದಿಸಿದ ಚಲನಚಿತ್ರ ನಿರ್ದೇಶಕರು M4 ಅನ್ನು ಮದುವೆಯಾಗಿ ಪ್ರಭಾವಿಸಿದ್ದಾರೆಯೇ
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q2526255 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M4 ) ) . ( FILTER ( ?x0 != M4 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q2526255 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P58 ) ( ?x0 ) ) . ( FILTER ( M4 != ?x0 ) ) . ( M4 ( wdt:P737 ) ( M4 ) ) . ( M4 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M6 ನ ಯಾವ ವಿತರಕರು ಮತ್ತು ನಿರ್ಮಾಪಕರನ್ನು M0, M1, M2, M3, M4 ಮತ್ತು M5 ನಿಂದ ಸ್ವಾಧೀನಪಡಿಸಿಕೊಳ್ಳಲಾಗಿದೆ 
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M6 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( M0 , M1 , M2 , M3 , M4 , M5 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P127 ) ( M0 , M1 , M2 , M3 , M4 , M5 ) ) . ( ?x0 ( wdt:P127 ) ( M2 , M3 , M4 , M5 ) ) . ( M6 ( wdt:P750 , wdt:P272 ) ( ?x1 ) ) rb
+
+Q: M3 , M4 , M5 , ಮತ್ತು M6 ಅವರು ನಿರ್ದೇಶಿಸಿ, ನಿರ್ಮಿಸಿ ಬರೆದ ಯಾವ ಚಲನಚಿತ್ರದಲ್ಲಿ M1 ಮತ್ತು M2 ನಟಿಸಿದ್ದಾರೆ   Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P162|wdt:P272 , wdt:P58 ) ( M3 , M4 , M5 , M6 ) ) . ( ?x0 ( wdt:P161 ) ( M1 , M2 ) ) rb Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( ?x0 ( wdt:P161 ) ( M1 , M2 ) ) . ( M3 ( wdt:P161 , wdt:P58 ) ( ?x1 ) ) . ( M4 ( wdt:P57 , wdt:P58 ) ( ?x1 ) ) . ( M5 ( wdt:P57 , wdt:P58 ) ( ?x1 ) ) . ( M6 ( wdt:P57 , wdt:P58 ) ( ?x1 ) ) rb
+
+==========CORRECT==========
+Q: M0 ಏನು ಸ್ಥಾಪಿಸಿದರು 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+
+Q: M0 ಏನು ಸಂಪಾದಿಸಿದರು 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 ) ( M0 ) ) rb
+
+Q: M0 M1 ನ ಮುಂದುವರಿದ ಭಾಗವೇ
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P155 ) ( M1 ) ) rb
+
+Q: M1 ನ ಉತ್ತರಭಾಗ M0 ಆಗಿದೆಯೇ
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P155 ) ( M1 ) ) rb
+
+Q: M0 ನ ಪೋಷಕರು ಯಾರು 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P40|wdt:P355 ) ( M0 ) ) rb
+
+Q: M0 ಏನು ಬರೆದಿದ್ದಾರೆ
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P58 ) ( M0 ) ) rb
+
+Q: ಒಬ್ಬ ಕಾಸ್ಟ್ಯೂಮ್ ಡಿಸೈನರ್ ನ ಸಂಗಾತಿ M0 ದ ಸ್ಥಾಪಕರೇ
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) rb
+
+Q: M0 ಏನನ್ನು ಬರೆದು ನಿರ್ದೇಶಿಸಿದ್ದಾರೆ
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M0 ಅವರು ಏನನ್ನು  ಬರೆದು ಸಂಪಾದಿಸಿದ್ದಾರೆ
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M0 ಏನು ಬರೆದು ನಿರ್ಮಿಸಿದ್ದಾರೆ
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P162|wdt:P272 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M0 ಇಂದ ಬರೆದು M1 ಇಂದ ನಿರ್ಮಿಸಲ್ಪಟ್ಟದ್ದು ಯಾವುದು 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P162|wdt:P272 ) ( M1 ) ) . ( ?x0 ( wdt:P58 ) ( M0 ) ) rb
+
+Q: ಏನು M0 ಇಂದ ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಿಸಲ್ಪಟ್ಟು M1 ಇಂದ ಬರೆಯಲಾಗಿದೆ 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1431 ) ( M0 ) ) . ( ?x0 ( wdt:P58 ) ( M1 ) ) rb
+
+Q: M0 , M1 , ಮತ್ತು M2 ಅವರು ಏನು ಬರೆದಿದ್ದಾರೆ ಮತ್ತು ಸಂಪಾದಿಸಿದರು 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ನಿಂದ M0 ಅನ್ನು ನಿರ್ಮಿಸಿ ಸಂಪಾದಿಸಲ್ಪಟ್ಟಿದೆಯೇ 
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M0 , M1 , ಮತ್ತು M2 ಅವರಿಂದ ಏನು ಬರೆದು ಸಂಪಾದಿಸಲ್ಪಟ್ಟಿದೆ 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ಅವರಿಂದ M0 ಅನ್ನು ಬರೆದು ಸಂಪಾದಿಸಲಾಗಿದೆಯೇ
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M1 , M2 , M3 , ಮತ್ತು M4 ನಿಂದ M0 ಅನ್ನು ನಿರ್ದೇಶಿಸಿ ನಿರ್ಮಿಸಲ್ಪಟ್ಟಿದೆಯೇ 
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 , M4 ) ) rb
+
+Q: M0 ಏನನ್ನು ಬರೆದು, ನಿರ್ಮಿಸಿ, ಸಂಪಾದಿಸೆ, ಮತ್ತು ಕಾರ್ಯನಿರ್ವಾಹಕ ನಿರ್ಮಾಣ ಮಾಡಿದ್ದಾರೆ 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P1431 , wdt:P162|wdt:P272 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M0 , M1 , ಮತ್ತು M2 ಅವರು ಏನನ್ನು ನಿರ್ದೇಶಿಸಿ , ಸಂಪಾದಿಸಿ , ಬರೆದಿದ್ದಾರೆ
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: M0 , M1 , ಮತ್ತು M2 ಅವರು ಏನನ್ನು ನಿರ್ದೇಶಿಸಿ , ಬರೆದು , ಸಂಪಾದಿಸಿದ್ದಾರೆ 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: M0 , M1 , ಮತ್ತು M2 ಏನನ್ನು ನಿರ್ದೇಶಿಸಿ , ಸಂಪಾದಿಸಿ , ಬರೆದಿದ್ದಾರೆ 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: M1 , M2 , M3 , M4 , ಮತ್ತು M5 ಅವರಿಂದ M0 ಅನ್ನು ಬರೆದು ನಿರ್ದೇಶಿಸಲಾಗಿದೆಯೇ
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 , M5 ) ) rb
+
+Q: M1 , M2 , M3 , ಮತ್ತು M4 ಅನ್ನು ಒಬ್ಬ ಚಲನಚಿತ್ರ ನಿರ್ಮಾಪಕರು ಸಂಪಾದಿಸಿ , ಬರೆದಿದ್ದಾರೆಯೇ
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M0 , M1 , ಮತ್ತು M2 ಅವರು ಏನನ್ನು ನಿರ್ದೇಶಿಸಿ , ಬರೆದು , ಸಂಪಾದಿಸಿದ್ದಾರೆ 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: M1 , M2 , M3 , ಮತ್ತು M4 ಅನ್ನು ಒಬ್ಬ ಚಲನಚಿತ್ರ ಸಂಪಾದಕರು ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿ , ಬರೆದಿದ್ದಾರೆಯೇ
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M1, M2, M3, M4 ಮತ್ತು M5 ಯಾವ ಚಲನಚಿತ್ರವನ್ನು ನಿರ್ದೇಶಿಸಿ ಬರೆದಿದ್ದಾರೆ
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 , M5 ) ) rb
+
+Q: M1, M2 ಮತ್ತು M3 ಯಾವ ಚಲನಚಿತ್ರವನ್ನು ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿ , ಬರೆದು , ನಿರ್ದೇಶಿಸಿದರು
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M0 , M1 , M2 , ಮತ್ತು M3 ಅವರು ಏನನ್ನು ನಿರ್ದೇಶಿಸಿ , ಬರೆದು , ಸಂಪಾದಿಸಿದರು 
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 , M3 ) ) rb
+
+Q: ಒಬ್ಬ ಚಲನಚಿತ್ರ ಸಂಪಾದಕರು M1, M2 ಮತ್ತು M3 ಅನ್ನು ಬರೆದು , ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿ , ಸಂಪಾದಿಸಿದ್ದಾರೆಯೇ
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: ಒಬ್ಬ ಚಲನಚಿತ್ರ ನಿರ್ಮಾಪಕರು M1, M2 ಮತ್ತು M3 ಅನ್ನು ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿ , ಸಂಪಾದಿಸಿ , ಬರೆದಿದ್ದಾರೆಯೇ 
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: ಒಬ್ಬ ಚಲನಚಿತ್ರ ಸಂಪಾದಕರು M1 , M2 , M3 , ಮತ್ತು M4 ಅನ್ನು ಸಂಪಾದಿಸಿ, ಬರೆದು ನಿರ್ದೇಶಿಸಿದ್ದಾರೆಯೇ
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M1, M2, M3, M4 ಮತ್ತು M5 ಯಾವ ಚಲನಚಿತ್ರವನ್ನು ನಿರ್ದೇಶಿಸಿ ಬರೆದಿದ್ದಾರೆ
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 , M5 ) ) rb
+
+Q: ಒಬ್ಬ ಚಲನಚಿತ್ರ ನಿರ್ಮಾಪಕರು M1, M2 ಮತ್ತು M3 ಅನ್ನು ಬರೆದು, ಕಾರ್ಯಕಾರಿ ನಿರ್ಮಾಣ ಮಾಡಿ, ಸಂಪಾದಿಸಿ ನಿರ್ದೇಶಿಸಿದ್ದಾರೆಯೇ
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ಅವರಿಂದ ಸಂಪಾದಿಸಿದ, ಬರೆದ ಮತ್ತು ನಿರ್ದೇಶಿಸಿದ ಚಲನಚಿತ್ರ ಯಾವುದು
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M1 , M2 , ಮತ್ತು M3 ಅವರು ಯಾವ ಚಲನಚಿತ್ರವನ್ನು ನಿರ್ದೇಶಿಸಿದ್ದಾರೆ, ಸಂಪಾದಿಸಿದ್ದಾರೆ, ಬರೆದಿದ್ದಾರೆ ಮತ್ತು ನಿರ್ಮಿಸಿದ್ದಾರೆ
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M2 , M3 , ಮತ್ತು M4 ಗಳನ್ನು ಬರೆದ, ಸಂಪಾದಿಸಿದ ಮತ್ತು ನಿರ್ದೇಶಿಸಿದ M0 ಒಬ್ಬ ಪುರುಷ ವ್ಯಕ್ತಿಯೇ
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M0 ( wdt:P21 ) ( wd:Q6581097 ) ) rb
+

@@ -1,0 +1,566 @@
+Accuracy on hf/models/mt5-small-zh-mcd3/generated_predictions_zh.txt is 0.36129032258064514
+
+==========WRONG==========
+Q: M1的一个作曲家是摄影师吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P344 ) ( M1 ) ) rb
+
+Q: M1的哪个续集有M0出演？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P155 ) ( M1 ) ) . ( ?x0 ( wdt:P161 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 ) ( ?x0 ) ) . ( ?x0 ( wdt:P155 ) ( M1 ) ) rb
+
+Q: M0 的创始人是 M1 的父母吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( M1 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( M1 ( wdt:P40|wdt:P355 ) ( ?x0 ) ) rb
+
+Q: M0 的兄弟姐妹是 M1 的雇员吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P108 ) ( M1 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( M1 ( wdt:P108 ) ( ?x0 ) ) rb
+
+Q: 服装设计师的配偶是M0的兄弟姐妹吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( M0 != ?x0 ) ) . ( M0 ( wdt:P3373 ) ( ?x0 ) ) rb
+
+Q: M0的创始人的配偶是服装设计师吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( M0 ( wdt:P112 ) ( ?x1 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( M1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( M1 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M2的瑞典父母是服装设计师吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( M2 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P40|wdt:P355 ) ( M2 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) rb
+
+Q: M2的配偶是日本摄影师吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q17 ) ) . ( ?x0 ( wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P27 ) ( wd:Q17 ) ) . ( ?x0 ( wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+
+Q: M0 的制作人是一个服装设计师的雇主是吗？
+ Gold: ASK WHERE lb ( ?x1 ( wdt:P108 ) ( ?x0 ) ) . ( M0 ( wdt:P272 ) ( ?x0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) rb
+
+Q: M0的配偶是一个服装设计师的兄弟姐妹吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( ?x1 ) ) . ( ?x0 ( wdt:P26 ) ( M0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P26 ) ( M0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( M1 ( wdt:P3373 ) ( ?x0 ) ) rb
+
+Q: M1的生产商和分销商是M0创立的吗？
+ Gold: ASK WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P112 ) ( M0 ) ) . ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) rb
+
+Q: M2 的瑞典配偶是一个服装设计师吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) . ( ?x0 ( wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) . ( ?x0 ( wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+
+Q: M0 的哪个配偶和兄弟姐妹嫁给了 M1？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M0 , M1 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P3373 , wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+
+Q: M0 建立了 M1 的哪个经销商和生产商？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) rb
+
+Q: M1的创始人是M0的荷兰兄弟吗？
+ Gold: ASK WHERE lb ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29999 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P27 ) ( wd:Q29999 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) rb
+
+Q: M1的一个雇员是M0的德国兄弟姐妹吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P108 ) ( M1 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q183 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P108 ) ( M0 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( M1 ( wdt:P27 ) ( wd:Q183 ) ) . ( M1 ( wdt:P3373 ) ( ?x0 ) ) rb
+
+Q: 有一个公司创始人是 M0 的法国兄弟吗？
+ Gold: ASK WHERE lb ( ?x1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q142 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q142 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) . ( FILTER ( M0 != ?x0 ) ) . ( M1 ( wdt:P27 ) ( wd:Q142 ) ) . ( M1 ( wdt:P3373 ) ( ?x0 ) ) rb
+
+Q: M0是M2制作的，M1编写的吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P162|wdt:P272 ) ( M2 ) ) . ( M0 ( wdt:P58 ) ( M1 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1431 ) ( M2 ) ) . ( M0 ( wdt:P58 ) ( M1 ) ) rb
+
+Q: M0 的父母、配偶和兄弟姐妹是否与 M1 结婚？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P40|wdt:P355 , wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M0 , M1 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P40|wdt:P355 , wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( M1 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M3的加拿大男性配偶是服装设计师吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581097 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q16 ) ) . ( ?x0 ( wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P21 ) ( wd:Q6581097 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q16 ) ) . ( ?x0 ( wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+
+Q: M2的生产商和经销商是M0和M1创立的吗？
+ Gold: ASK WHERE lb ( M2 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 , M1 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P112 ) ( M0 , M1 ) ) . ( M2 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) rb
+
+Q: 受M2影响的一个演员是M0的兄弟姐妹吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q33999 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) rb
+
+Q: M0、M1 和 M2 编写和编辑了什么？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P58 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x1 ( wdt:P1040 ) ( M0 , M1 , M2 ) ) rb
+
+Q: 哪个一个部电影的服装设计师是M0的西班牙兄弟姐妹？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x1 ( wdt:P2515 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P2515 ) ( ?x1 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+
+Q: 有一个作曲家是 M3 的瑞典女性配偶吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) . ( ?x0 ( wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( FILTER ( M3 != ?x0 ) ) . ( M3 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( M3 ( wdt:P27 ) ( wd:Q34 ) ) . ( M3 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M0 是由 M1 、 M2 和 M3 制作和编辑的吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P1431 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M2 嫁娶了 M0 的哪个女性同胞和配偶？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M0 , M2 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P3373 , wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+
+Q: M0、M1 和 M2 编写和编辑了什么？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P58 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x1 ( wdt:P1040 ) ( M0 , M1 , M2 ) ) rb
+
+Q: M0 是否由 M1、M2 和 M3 制作和编辑？
+ Gold: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P1431 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M0 的哪个女性兄弟姐妹是 M1 的兄弟姐妹和配偶？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P26 ) ( M1 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 , M1 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+
+Q: M0 是由 M1 和 M2 制作、导演和编写的吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 ) ) rb
+
+Q: 有一个服装设计师是M1、M2、M3的明星和编辑吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: 谁是 M1 、 M2 、 M3 和 M4 的编辑和明星？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M4 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 ) ( ?x0 ) ) . ( M4 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: M3 聘请了 M0、M1 和 M2 的哪位作家和编辑？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M3 ) ) rb
+
+Q: M0是由M1、M2、M3、M4执行制作的吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P1431 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 , M4 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1431 ) ( M1 , M2 , M3 , M4 ) ) rb
+
+Q: M0、M1 和 M2 导演、编辑和编写了什么？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x1 ) ) . ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x1 ) ) . ( M1 ( wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M0、M1 和 M2 导演、编写和编辑了什么？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x1 ) ) . ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x1 ) ) . ( M1 ( wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M1、M2、M3和M4的摄影师和导演是电影制片人吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M4 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) . ( M4 ( wdt:P57 ) ( ?x0 ) ) rb
+
+Q: M1、M2、M3 和 M4 的电影摄影师和导演是一个演员吗？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M4 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) . ( M4 ( wdt:P57 ) ( ?x0 ) ) rb
+
+Q: 由 M0、M1 和 M2 编写、执行制作和指导的是什么？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x1 ( wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: M0、M1 和 M2 指导、编辑和编写了什么？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x1 ) ) . ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x1 ) ) . ( M1 ( wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M0 、 M1 、 M2 、 M3 和 M4 的导演和编剧是什么？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P58 ) ( M0 , M1 , M2 , M3 , M4 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P58 ) ( ?x1 ) ) . ( M0 ( wdt:P57 , wdt:P58 ) ( ?x1 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x1 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x1 ) ) . ( M3 ( wdt:P57 , wdt:P58 ) ( ?x1 ) ) . ( M4 ( wdt:P57 , wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M0、M1 和 M2 导演、编写和编辑了什么？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x1 ) ) . ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x1 ) ) . ( M1 ( wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M0、M1、M2的哪位编剧兼摄影师执行制作了M3和M4？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 ) ( ?x0 ) ) . ( M4 ( wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 ) ( ?x0 ) ) . ( M4 ( wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: 哪位电影制片人是M1和M2的编辑、执行制片人、导演和编剧？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M3的作曲家是M0、M1和M2的明星、导演和摄影师吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 , wdt:P86 ) ( ?x0 ) ) rb
+
+Q: M3和M4的作曲家是M0、M1和M2的编辑和明星吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P86 ) ( ?x0 ) ) . ( M4 ( wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 ) ( ?x0 ) ) . ( M4 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: M0、M1、M2 和 M3 导演、编剧和编辑了什么？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 , M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x1 ( wdt:P57 , wdt:P1040 ) ( M0 , M1 , M2 , M3 ) ) rb
+
+Q: M3与M0、M1、M2的哪位作家和编辑结婚并影响了他们？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 , wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+
+Q: M0和M1的哪个作家、明星、导演和作曲家是M2的导演？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P57 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P57 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P57 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P57 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M0 和 M1 的明星、作家、编辑、电影摄影师和导演是电影摄影师吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: M1、M2、M3 和 M4 M0 的编辑和执行制片人是电影摄影师和明星吗？
+ Gold: ASK WHERE lb ( M1 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M4 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 ) ( ?x0 ) ) . ( M4 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: M0、M1、M2、M3、M4有M6的哪位摄影师和编辑出演？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 ) ( ?x0 ) ) . ( M4 ( wdt:P161 ) ( ?x0 ) ) . ( M5 ( wdt:P161 ) ( ?x0 ) ) . ( M6 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 ) ( ?x0 ) ) . ( M4 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: M2影响并嫁娶了M0和M1的哪个作家、编辑和导演？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 , wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 , wdt:P26 ) ( ?x1 ) ) . ( M2 ( wdt:P1040 ) ( ?x1 ) ) . ( FILTER ( ?x0 != ?x1 ) ) rb
+
+Q: M3 的编辑、执行制片人和电影摄影师是 M0、M1 和 M2 的明星和作家吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M1和M2的哪个作家，执行制片人和编辑执行制作和编辑了M0？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M1 ( wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: M0和M1的明星、编辑、摄影师和作家是M2的执行制作人和摄影师吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M0、M1、M2、M3 和 M4是否由一个电影剪辑师的配偶编写和剪辑？
+ Gold: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( FILTER ( ?x0 != ?x1 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M0、M1、M2是哪位女电影导演剪辑、编写、导演的？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x1 ) ) . ( M0 ( wdt:P1040 ) ( ?x1 ) ) . ( M1 ( wdt:P1040 ) ( ?x1 ) ) . ( M2 ( wdt:P1040 ) ( ?x1 ) ) . ( ?x1 ( wdt:P21 ) ( wd:Q6581072 ) ) rb
+
+Q: M0、M1、M2、M3的哪个作家和导演是M5的加拿大编辑？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M5 ( wdt:P1040 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q16 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q16 ) ) rb
+
+Q: M4的导演和执行制片人是否指导并编写了M0，M1，M2和M3？
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1431 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: M0 的创始人和雇员是否受雇于 M1 和 M2并受雇于 M3 和 M4？
+ Gold: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 , M2 , M3 , M4 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 , M2 ) ) . ( M3 ( wdt:P108 ) ( ?x0 ) ) . ( M4 ( wdt:P108 ) ( ?x0 ) ) rb
+
+Q: M1、M2 和 M3 编写、编辑、制作和导演了哪部电影？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( M1 ( wdt:P58 ) ( ?x1 ) ) . ( M2 ( wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( M3 ( wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M0和M1的哪个作家、摄影师、明星、编辑和导演是M2的执行制片人？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: M3的导演、摄影师和作家是否编写和编辑了M0、M1和M2？
+ Gold: ASK WHERE lb ( M3 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M4 的美国电影摄影师是否编辑、导演和编写了 M0、M1 和 M2？
+ Gold: ASK WHERE lb ( M4 ( wdt:P344 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) rb
+
+Q: M0、M1和M2的哪位编剧、摄影师和导演编写并执行制作了M3？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: 哪部电影由 M1、M2 和 M3 导演、制作、编写和剪辑？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) rb
+
+Q: 哪部电影由 M1、M2 和 M3 导演、编辑、编写和制作？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) rb
+
+Q: M3 的导演是否编辑、执行制作、编写和指导 M0、M1 和 M2？
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M3 的导演是否编辑、编写、执行制作和指导 M0、M1 和 M2？
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M1、M2和M3的哪个编辑和摄影师编辑、执行制作和导演了M0？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: 是否是一个摄影师编辑并导演了M2、M3、M4且出演了M0？
+ Gold: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M2 ( wdt:P161 , wdt:P57 , wdt:P1040 ) ( M0 ) ) . ( M3 ( wdt:P161 , wdt:P57 , wdt:P1040 ) ( M0 ) ) . ( M4 ( wdt:P161 , wdt:P57 , wdt:P1040 ) ( M0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29999 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 ) ( ?x0 ) ) . ( M4 ( wdt:P57 ) ( ?x0 ) ) rb
+
+Q: 是否有一个演员影响了M1和M2并嫁娶了M4和M5是M3的创始人？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( M3 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M4 , M5 ) ) . ( FILTER ( ?x0 != M4 ) ) . ( FILTER ( ?x0 != M5 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 , M4 , M5 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M4 ) ) . ( FILTER ( ?x0 != M5 ) ) rb
+
+Q: M0和M1的哪个员工和创始人被M2雇佣并被M3和M4雇佣？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 , M2 , M3 , M4 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 ) ) . ( M2 ( wdt:P108 ) ( ?x0 ) ) . ( M3 ( wdt:P108 ) ( ?x0 ) ) . ( M4 ( wdt:P108 ) ( ?x0 ) ) rb
+
+Q: M3的哪位作家、摄影师、明星、和作曲家编辑和导演了M0、M1、M2？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M3 ( wdt:P161 , wdt:P344 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M2的编辑和执行制作人是否指导、编辑、写作和执行制作了M0和M1？
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: 有没有创立M4、M5、M6的电影制片人导演并编写了M1、M2、M3？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( M5 ( wdt:P112 ) ( ?x0 ) ) . ( M6 ( wdt:P112 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P112 ) ( ?x0 ) ) . ( M3 ( wdt:P112 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( M5 ( wdt:P112 ) ( ?x0 ) ) . ( M6 ( wdt:P112 ) ( ?x0 ) ) rb
+
+Q: M2的哪位执行制片人、编辑、作曲家、摄影师和导演 编辑并编写了M0和M1？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M2 ( wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P86 , wdt:P1431 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P86 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P86 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: M0 的哪位美国创始人和雇员受雇于 M1且受雇于 M2、M3 和 M4？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 , M2 , M3 , M4 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) . ( M2 ( wdt:P108 ) ( ?x0 ) ) . ( M3 ( wdt:P108 ) ( ?x0 ) ) . ( M4 ( wdt:P108 ) ( ?x0 ) ) rb
+
+Q: M0、M1 和 M2 的明星、作家和编辑是M3的电影摄影师、导演、剪辑师和作曲家吗？
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M0的执行制片人和编剧是否受雇于M1、M2和M3且受雇于M4、M5和M6？
+ Gold: ASK WHERE lb ( M0 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M1 , M2 , M3 , M4 , M5 , M6 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P108 ) ( ?x0 ) ) . ( M2 ( wdt:P108 ) ( ?x0 ) ) . ( M3 ( wdt:P108 ) ( ?x0 ) ) . ( M4 ( wdt:P108 ) ( ?x0 ) ) . ( M5 ( wdt:P108 ) ( ?x0 ) ) rb
+
+Q: M0、M1、M2和M3的哪位电影摄影师和作家导演、编写和执行制作了M4？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M3和M4的哪个执行制片人，导演和编辑执行制作了M0且执行制作了M1和M2？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M3 ( wdt:P344 , wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M4 ( wdt:P344 , wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M0 ( wdt:P1431 ) ( ?x0 ) ) . ( M1 ( wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1431 ) ( ?x0 ) ) . ( M1 ( wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: M0、M1、M2、M3的导演和编辑有没有和M4和M5结婚并和M6结婚？
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M4 , M5 , M6 ) ) . ( FILTER ( ?x0 != M4 ) ) . ( FILTER ( ?x0 != M5 ) ) . ( FILTER ( ?x0 != M6 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( FILTER ( M2 != M5 ) ) . ( FILTER ( M6 != ?x0 ) ) . ( M1 ( wdt:P26 ) ( ?x0 , M4 , M5 ) ) . ( M6 ( wdt:P26 ) ( ?x0 , M4 , M5 ) ) rb
+
+Q: M6 的哪个分销商和生产商被M0和M1收购并被 M2、M3、M4 和 M5 收购？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M6 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( M0 , M1 , M2 , M3 , M4 , M5 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P127 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( ?x1 , M1 ) ) . ( M2 ( wdt:P750 , wdt:P272 ) ( ?x1 ) ) . ( M3 ( wdt:P750 , wdt:P272 ) ( ?x1 ) ) . ( M4 ( wdt:P750 , wdt:P272 ) ( ?x1 ) ) . ( M5 ( wdt:P127 ) ( ?x0 ) ) rb
+
+Q: M3和M4的哪个作曲家、编辑和导演导演了M5且剪辑了M0、M1和M2的？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M3 ( wdt:P57 , wdt:P1040 , wdt:P86 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 , wdt:P86 ) ( ?x0 ) ) . ( M5 ( wdt:P57 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: 是否有一个导演导演并出演了M2和M3影响了M0并影响了M1？
+ Gold: ASK WHERE lb ( M2 ( wdt:P161 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P57 ) ( ?x0 ) ) . ( M0 ( wdt:P737 ) ( ?x0 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P57 ) ( ?x0 ) ) . ( M0 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: 是否有一个娶了M5、M6、M7，影响了M1、M2、M3的剪辑师建立了M4？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( M3 ( wdt:P737 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M5 , M6 , M7 ) ) . ( FILTER ( ?x0 != M5 ) ) . ( FILTER ( ?x0 != M6 ) ) . ( FILTER ( ?x0 != M7 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( M3 ( wdt:P737 ) ( ?x0 ) ) . ( FILTER ( M4 != ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( M5 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M0、M1、M2的哪位导演、明星、编剧嫁娶、影响、并受M3影响？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 , wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 , wdt:P26 ) ( ?x1 ) ) . ( M2 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x1 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+
+Q: M6 的哪个经销商和生产商被M0 和 M1收购，并收购了 M2、M3、M4 和 M5？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M6 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( M0 , M1 ) ) . ( M2 ( wdt:P127 ) ( ?x0 ) ) . ( M3 ( wdt:P127 ) ( ?x0 ) ) . ( M4 ( wdt:P127 ) ( ?x0 ) ) . ( M5 ( wdt:P127 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P127 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( M1 ) ) . ( M2 ( wdt:P127 ) ( ?x0 ) ) . ( M3 ( wdt:P127 ) ( ?x0 ) ) . ( M4 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( M5 ( wdt:P127 ) ( ?x0 ) ) rb
+
+Q: M4 和 M5 的明星、剪辑师和摄影师是一个西班牙作家且是M0、M1 和 M2 的导演吗？
+ Gold: ASK WHERE lb ( M4 ( wdt:P161 , wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M5 ( wdt:P161 , wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29 ) ) . ( M4 ( wdt:P161 , wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M5 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: 是否有一个建立了M1和M2并建立了M3，M4和M5的摄影师是M6的配偶？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( M2 ( wdt:P112 ) ( ?x0 ) ) . ( M3 ( wdt:P112 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( M5 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M6 ) ) . ( FILTER ( ?x0 != M6 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P26 ) ( M5 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( M2 ( wdt:P112 ) ( ?x0 ) ) . ( M3 ( wdt:P112 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( M5 ( wdt:P112 ) ( ?x0 ) ) rb
+
+Q: M1、M2和M3的哪位电影摄影师和明星编写、导演、执行制作和剪辑M0？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) rb
+
+Q: M0、M1、M2、M3的哪位作家和摄影师嫁给了一个人并影响了M4和M5？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P737 ) ( ?x0 ) ) . ( M5 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q5 ) ) . ( FILTER ( ?x0 != ?x1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( M3 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q5 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M3 ) ) . ( M4 ( wdt:P737 ) ( ?x1 ) ) . ( M5 ( wdt:P737 ) ( ?x0 ) ) . ( M5 ( wdt:P26 ) ( ?x1 ) ) rb
+
+Q: 是佛有一个导演、执行制片、编辑和编写了M1 和 M2的摄影师是M3的导演？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q148 ) ) . ( M1 ( wdt:P58 ) ( ?x1 ) ) rb
+
+Q: 编写和剪辑M1、M2、M3的电影导演是否结婚并影响了M4？
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q2526255 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M4 ) ) . ( FILTER ( ?x0 != M4 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q2526255 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( FILTER ( M2 != ?x0 ) ) . ( FILTER ( M3 != ?x0 ) ) . ( M4 ( wdt:P737 ) ( M4 ) ) . ( M4 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: M6的哪个分销商和生产商被M0、M1、M2和M3收购并被M4和M5收购？
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M6 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( M0 , M1 , M2 , M3 , M4 , M5 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( M1 , M2 , M3 ) ) . ( M5 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) rb
+
+Q: 哪部电影由M3、M4、M5和M6导演、制作和编写并由M1和M2出演？ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P162|wdt:P272 , wdt:P58 ) ( M3 , M4 , M5 , M6 ) ) . ( ?x0 ( wdt:P161 ) ( M1 , M2 ) ) rb Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P162|wdt:P272 , wdt:P58 ) ( ?x1 ) ) . ( M1 ( wdt:P161 ) ( ?x1 ) ) . ( M2 ( wdt:P161 ) ( ?x1 ) ) . ( ?x1 ( wdt:P57 , wdt:P162|wdt:P272 , wdt:P58 ) ( M3 , M4 , M5 , M6 ) ) rb
+
+==========CORRECT==========
+Q: M0是编剧吗？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q69423232 ) ) rb
+
+Q: M0是作曲家吗？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q36834 ) ) rb
+
+Q: M0建立了什么？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+
+Q: M0编辑了什么？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 ) ( M0 ) ) rb
+
+Q: M0是M1的续集吗？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P155 ) ( M1 ) ) rb
+
+Q: M1的续集是M0吗？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P155 ) ( M1 ) ) rb
+
+Q: M0 的父母是什么人？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P40|wdt:P355 ) ( M0 ) ) rb
+
+Q: M0编写了什么？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P58 ) ( M0 ) ) rb
+
+Q: M0 是 M1 雇佣的吗？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P108 ) ( M1 ) ) rb
+
+Q: M0是M1写的吗？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P58 ) ( M1 ) ) rb
+
+Q: M0是由M1执行制作的吗？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P1431 ) ( M1 ) ) rb
+
+Q: M1的服装设计师是作曲家吗？
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( M1 ( wdt:P2515 ) ( ?x0 ) ) rb
+
+Q: M1的摄影师是编剧吗？
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q69423232 ) ) . ( M1 ( wdt:P344 ) ( ?x0 ) ) rb
+
+Q: M1 的配偶是 M0 的雇员吗？
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P108 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M1 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+
+Q: M1是作曲家制作的吗？
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( M1 ( wdt:P162|wdt:P272 ) ( ?x0 ) ) rb
+
+Q: M1的作曲家是编剧吗？
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q69423232 ) ) . ( M1 ( wdt:P86 ) ( ?x0 ) ) rb
+
+Q: M0发行了M1的什么续集？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 ) ( M0 ) ) . ( ?x0 ( wdt:P155 ) ( M1 ) ) rb
+
+Q: M0 的哪个雇主是 M1 的经销商？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( M1 ( wdt:P750 ) ( ?x0 ) ) rb
+
+Q: M1 的哪个雇主是 M0 的父母？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P108 ) ( ?x0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( M0 ) ) rb
+
+Q: M0 编写和导演了什么？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M0 编写和编辑了什么？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M0建立了哪个电影导演的雇主？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x1 ( wdt:P108 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q2526255 ) ) rb
+
+Q: M0 编写并制作了什么？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P162|wdt:P272 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M0 的哪个雇主是一个公司的母公司？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) rb
+
+Q: M0 的哪个雇主是一部电影的发行商？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( ?x1 ( wdt:P750 ) ( ?x0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) rb
+
+Q: M0创立了M1的哪家经销商和生产商？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+
+Q: 什么是M0编写的并由M1制作的？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P162|wdt:P272 ) ( M1 ) ) . ( ?x0 ( wdt:P58 ) ( M0 ) ) rb
+
+Q: 什么是由M0 执行制作并由M1编写的？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1431 ) ( M0 ) ) . ( ?x0 ( wdt:P58 ) ( M1 ) ) rb
+
+Q: M1 的哪家经销商和生产商是 M0 创立的？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+
+Q: M0发行并制作了M1的什么续集？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 , wdt:P162|wdt:P272 ) ( M0 ) ) . ( ?x0 ( wdt:P155 ) ( M1 ) ) rb
+
+Q: M0 收购了一家公司的哪个子公司和母公司？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P127 ) ( M0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 , wdt:P749 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) rb
+
+Q: M0 是否由 M1 、 M2 和 M3 编写和编辑？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M0 、 M1 和 M2 制作和执行制作的是什么？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1431 , wdt:P162|wdt:P272 ) ( M0 , M1 , M2 ) ) rb
+
+Q: M0 、 M1 、 M2 和 M3 编辑和指导了什么？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 ) ( M0 , M1 , M2 , M3 ) ) rb
+
+Q: M0 是由 M1 、 M2 、 M3 和 M4 导演和编写的吗？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 ) ) rb
+
+Q: M0 是由 M1、M2、M3 和 M4 导演和制作的吗？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 , M4 ) ) rb
+
+Q: M0 编写、执行制作、制作和编辑了什么？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P1431 , wdt:P162|wdt:P272 , wdt:P58 ) ( M0 ) ) rb
+
+Q: M0 是否由 M1 编辑、执行制作、制作和编写？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P1431 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 ) ) rb
+
+Q: M0 是由 M1、M2、M3、M4 和 M5 编写和导演的吗？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 , M5 ) ) rb
+
+Q: 是否有一个电影制片人编辑并编写了 M1、M2、M3 和 M4？
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: 电影编辑执行是否制作和编写了 M1、M2、M3 和 M4？
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M0 是否由 M1、M2 和 M3 编写、编辑和指导？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M0 是否由 M1、M2 和 M3 编写、 导演并执行制作？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M0 是否由 M1、M2 和 M3 编写、执行制作并导演？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M0和M1的编剧、导演和执行制片人制作了M2和M3？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: 哪部电影是由 M1、M2、M3、M4 和 M5 导演和编剧的？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 , M5 ) ) rb
+
+Q: M1、M2 和 M3 执行制作、编写和导演了哪部电影？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: 是否有一个电影编辑编写、执行制作和编辑了 M1、M2 和 M3？
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: 是否有一个电影制片人执行制作、编辑和编写了 M1、M2 和 M3？
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: M1、M2、M3 和 M4 是否由一个电影剪辑师编辑、编写和导演？
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: 哪部电影由 M1、M2、M3、M4 和 M5 导演和编剧？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 , M5 ) ) rb
+
+Q: M0是否是编写并编辑M2、M3、M4、M5、M6的服装设计师？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M5 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M6 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) rb
+
+Q: 是否有一个电影制片人编写、执行制作、编辑和导演 M1、M2 和 M3？
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: 由 M1、M2 和 M3 编辑、编写和导演的电影是什么？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: 由 M1、M2 和 M3 执行制作、导演和编剧的电影是什么？
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: M0 是 编写、编辑和导演M2、M3 和 M4的男性吗？
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M0 ( wdt:P21 ) ( wd:Q6581097 ) ) rb
+

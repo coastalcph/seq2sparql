@@ -1,0 +1,576 @@
+Accuracy on hf/models/mt5-small-he-mcd2/generated_predictions_he.txt is 0.2967741935483871
+
+==========WRONG==========
+Q: האם מעצב התלבושות של M1 היה מלחין
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( M1 ( wdt:P2515 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P2515 ) ( ?x0 ) ) rb
+
+Q: האם צלם הקולנוע של M1 היה תסריטאי
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q69423232 ) ) . ( M1 ( wdt:P344 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P344 ) ( ?x0 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581097 ) ) rb
+
+Q: האם בן הזוג של M1 היה עובד של M0
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P108 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M1 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( M0 ( wdt:P108 ) ( ?x0 ) ) rb
+
+Q: האם מלחין של M1 היה תסריטאי
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q69423232 ) ) . ( M1 ( wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P86 ) ( ?x0 ) ) rb
+
+Q: האם מלחין של M1 היה צלם קולנוע
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P86 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q16 ) ) rb
+
+Q: איזה המשך של M1 הפיץ M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 ) ( M0 ) ) . ( ?x0 ( wdt:P155 ) ( M1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 ) ( M0 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( ?x1 ) ) . ( ?x1 ( wdt:P155 ) ( M1 ) ) rb
+
+Q: באיזה סרט המשך של M1 כיכב M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P155 ) ( M1 ) ) . ( ?x0 ( wdt:P161 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P155 ) ( M0 ) ) . ( ?x0 ( wdt:P161 ) ( M1 ) ) rb
+
+Q: האם מייסד של M0 היה הורה של M1
+ Gold: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( M1 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( M1 ( wdt:P40|wdt:P355 ) ( ?x0 ) ) rb
+
+Q: האם אח של M0 היה עובד של M1
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P108 ) ( M1 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( M1 ( wdt:P108 ) ( ?x0 ) ) rb
+
+Q: איזה מעסיק של M0 היה המפיץ של M1
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( M1 ( wdt:P750 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P108 ) ( ?x1 , M0 ) ) . ( M1 ( wdt:P750 ) ( ?x1 ) ) rb
+
+Q: איזה מעסיק של M1 היה ההורה של M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P108 ) ( ?x0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P40|wdt:P355 ) ( M0 ) ) . ( ?x0 ( wdt:P108 ) ( M1 ) ) rb
+
+Q: האם בן זוגה של מעצבת תלבושות היה אח של M0
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( M0 != ?x0 ) ) . ( M0 ( wdt:P3373 ) ( ?x0 ) ) rb
+
+Q: האם בן הזוג של מעצב תלבושות היה המייסד של M0
+ Gold: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P2515 ) ( ?x0 ) ) . ( FILTER ( M0 != ?x0 ) ) . ( M0 ( wdt:P112 ) ( ?x0 ) ) rb
+
+Q: האם מעצבת תלבושות היתה ההורה השוודית של M2
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( M2 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) . ( M2 ( wdt:P40|wdt:P355 ) ( ?x0 ) ) rb
+
+Q: איזה מעסיק של במאי קולנוע M0 הקים
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x1 ( wdt:P108 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q2526255 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x1 ( wdt:P108 ) ( ?x0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q2526255 ) ) rb
+
+Q: האם מעסיקו של מעצב תלבושות היה מפיק של M0
+ Gold: ASK WHERE lb ( ?x1 ( wdt:P108 ) ( ?x0 ) ) . ( M0 ( wdt:P272 ) ( ?x0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( ?x0 ( wdt:P272 ) ( ?x1 ) ) rb
+
+Q: האם אח של מעצבת תלבושות היה בן זוג של M0
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( ?x1 ) ) . ( ?x0 ( wdt:P26 ) ( M0 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( M0 != ?x0 ) ) . ( M0 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: איזה מעסיק של M0 היה חברת אם של חברה
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P40|wdt:P355 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) rb
+
+Q: איזה מעסיק של M0 היה מפיץ של סרט
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P108 ) ( ?x0 ) ) . ( ?x1 ( wdt:P750 ) ( ?x0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x1 ( wdt:P108 ) ( ?x0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) rb
+
+Q: האם המפיק והמפיץ של M1 הוקם על ידי M0
+ Gold: ASK WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( M0 ) ) rb
+
+Q: האם מעצב תלבושות היה בן זוג שבדי של M2
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) . ( ?x0 ( wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) . ( FILTER ( M2 != ?x0 ) ) . ( M2 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: איזה בן זוג ואח של M0 התחתנו עם M1
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M0 , M1 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( ?x0 ( wdt:P26 , wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+
+Q: איזה מפיץ ומפיק של M1 הקים M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P112 ) ( ?x1 , M0 ) ) . ( M1 ( wdt:P750 , wdt:P272 ) ( ?x1 ) ) rb
+
+Q: האם מייסד M1 היה אח הולנדי של M0
+ Gold: ASK WHERE lb ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29999 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( FILTER ( M0 != M1 ) ) . ( M0 ( wdt:P112 ) ( M0 ) ) . ( M0 ( wdt:P27 ) ( wd:Q29999 ) ) . ( M0 ( wdt:P3373 ) ( M1 ) ) rb
+
+Q: האם אח גרמני של M0 היה עובד של M1
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P108 ) ( M1 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q183 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P27 ) ( wd:Q183 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( M1 ( wdt:P108 ) ( ?x0 ) ) rb
+
+Q: איזה מפיץ ומפיק של M1 הוקם על ידי M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P112 ) ( M0 ) ) . ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) rb
+
+Q: מה נכתב על ידי M0 והופק על ידי M1
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P162|wdt:P272 ) ( M1 ) ) . ( ?x0 ( wdt:P58 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P162|wdt:P272 ) ( M0 ) ) . ( ?x0 ( wdt:P58 ) ( M1 ) ) rb
+
+Q: האם מייסד חברה היה אח צרפתי של M0
+ Gold: ASK WHERE lb ( ?x1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q142 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) . ( FILTER ( M0 != ?x0 ) ) . ( M0 ( wdt:P27 ) ( wd:Q142 ) ) . ( M0 ( wdt:P3373 ) ( ?x0 ) ) rb
+
+Q: האם M0 הופק על ידי M2 ונכתב על ידי M1
+ Gold: ASK WHERE lb ( M0 ( wdt:P162|wdt:P272 ) ( M2 ) ) . ( M0 ( wdt:P58 ) ( M1 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P162|wdt:P272 ) ( M1 ) ) . ( M0 ( wdt:P58 ) ( M2 ) ) rb
+
+Q: מה הופק בפועל על ידי M0 ונכתב על ידי M1
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1431 ) ( M0 ) ) . ( ?x0 ( wdt:P58 ) ( M1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1431 ) ( M0 ) ) . ( ?x0 ( wdt:P58 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q5 ) ) rb
+
+Q: איזה מפיץ ומפיק של M1 הוקם על ידי M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P112 ) ( M0 ) ) . ( M1 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) rb
+
+Q: האם ההורה, בן הזוג והאח של M0 התחתנו עם M1
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P40|wdt:P355 , wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M0 , M1 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P40|wdt:P355 , wdt:P3373 , wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( M1 ( wdt:P40|wdt:P355 , wdt:P26 ) ( ?x0 ) ) rb
+
+Q: האם מעצב תלבושות היה בן הזוג הקנדי של M3
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581097 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q16 ) ) . ( ?x0 ( wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581097 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q16 ) ) . ( FILTER ( M3 != ?x0 ) ) . ( M3 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: איזה סרט המשך של M1 הופץ והופק על ידי M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 , wdt:P162|wdt:P272 ) ( M0 ) ) . ( ?x0 ( wdt:P155 ) ( M1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P750 , wdt:P162|wdt:P272 ) ( M0 ) ) . ( ?x0 ( wdt:P162|wdt:P272 ) ( M1 ) ) rb
+
+Q: איזו חברת בת וחברת אם של חברה רכשה M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P127 ) ( M0 ) ) . ( ?x0 ( wdt:P40|wdt:P355 , wdt:P749 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q4830453 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q1762059 ) ) . ( ?x0 ( wdt:P127 ) ( M0 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) rb
+
+Q: האם המפיק והמפיץ של M2 הוקם על ידי M0 ו-M1
+ Gold: ASK WHERE lb ( M2 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P112 ) ( M0 , M1 ) ) rb
+ Inferred: ASK WHERE lb ( M2 ( wdt:P750 , wdt:P272 ) ( M0 , M1 ) ) rb
+
+Q: האם שחקן ש-M2 הושפע ממנו היה אחיו של M0
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) rb
+
+Q: איזה מעצב תלבושות של סרט היה אחיו הספרדי של M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x1 ( wdt:P2515 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q11424 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x1 ( wdt:P2515 ) ( ?x2 ) ) . ( ?x2 ( wdt:P31 ) ( wd:Q11424 ) ) . ( FILTER ( ?x0 != M0 ) ) rb
+
+Q: האם מלחינה הייתה בת זוג שוודית של M3
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q34 ) ) . ( ?x0 ( wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( FILTER ( M3 != ?x0 ) ) . ( M3 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( M3 ( wdt:P27 ) ( wd:Q34 ) ) . ( M3 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: לאיזו אחות ובת זוג של M0 נישא M2
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 ) ) . ( ?x0 ( wdt:P26 ) ( M0 , M2 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x1 != M0 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+
+Q: איזו אחות של M0 היתה אחות ובת זוג של M1
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) . ( ?x0 ( wdt:P3373 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P26 ) ( M1 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( ?x0 ( wdt:P3373 , wdt:P26 ) ( M0 ) ) . ( FILTER ( ?x0 != M0 ) ) . ( FILTER ( ?x1 != M1 ) ) rb
+
+Q: האם מעצב תלבושות היה כוכב ועורך של M1, M2 ו-M3
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P2515 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: מי היה עורך וכוכב של M1, M2, M3 ו-M4
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M4 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P161 ) ( ?x0 ) ) . ( M4 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: האם M0 בוים והופק על ידי M1 , M2 , M3 ו-M4
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 , M4 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1431 ) ( M1 , M2 , M3 , M4 ) ) rb
+
+Q: איזה תסריטאי ועורך של M0, M1 ו-M2 הועסק ב-M3
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q69423232 ) ) . ( M0 ( wdt:P1040 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: האם צלם קולנוע ובמאי של M1, M2, M3 ו-M4 היה מפיק סרטים
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M4 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M4 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) rb
+
+Q: האם שחקן היה צלם קולנוע ובמאי של M1, M2, M3 ו-M4
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M4 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M1 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P344 ) ( ?x0 ) ) . ( M4 ( wdt:P344 , wdt:P57 ) ( M0 ) ) rb
+
+Q: מה ביימו, ערכו וכתבו M0, M1 ו-M2
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x1 ) ) . ( M0 ( wdt:P58 ) ( ?x1 ) ) . ( M1 ( wdt:P58 ) ( ?x1 ) ) . ( M2 ( wdt:P58 ) ( ?x1 ) ) rb
+
+Q: האם מפיק סרטים ערך וכתב את M1 , M2 , M3 ו-M4
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) rb
+
+Q: איזה כותב וצלם של M0, M1 ו-M2 הפיק בפועל את M3 ו-M4
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 ) ( ?x0 ) ) . ( M4 ( wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 ) ( ?x0 ) ) . ( M4 ( wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: איזה מפיק סרטים היה עורך, מפיק בפועל, במאי ותסריטאי של M1 ו-M2
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: איזה תסריטאי, במאי ומפיק בפועל של M0 ו-M1 הפיק בפועל את M2 ו-M3
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q69423232 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: האם מלחין של M3 היה כוכב, במאי וצלם קולנוע של M0, M1 ו-M2
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 ) ( ?x0 ) ) . ( M1 ( wdt:P86 ) ( ?x0 ) ) . ( M2 ( wdt:P86 ) ( ?x0 ) ) rb
+
+Q: האם מלחין של M3 ו-M4 היה עורך וכוכב של M0, M1 ו-M2
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P86 ) ( ?x0 ) ) . ( M4 ( wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P86 ) ( ?x0 ) ) . ( M2 ( wdt:P86 ) ( ?x0 ) ) . ( M3 ( wdt:P86 ) ( ?x0 ) ) . ( M4 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: האם עורך סרטים כתב, הפיק בפועל וערך את M1, M2 ו-M3
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: האם מפיק סרטים הפיק בפועל, ערך וכתב את M1, M2 ו-M3
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( M0 ) ) rb
+
+Q: עם איזה כותב ועורך של M0, M1 ו-M2 התחתן M3 והשפיע עליו
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 , wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( ?x0 ( wdt:P737 , wdt:P58 ) ( ?x1 ) ) . ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x1 ) ) . ( ?x0 ( wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+
+Q: איזה סופר, כוכב, במאי ומלחין של M0 ו-M1 היה במאי של M2
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P57 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P57 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P57 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: האם צלם קולנוע היה כוכב, תסריטאי, עורך, צלם קולנוע ובמאי של M0 ו-M1
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: האם צלם קולנוע וכוכב של M1 , M2 , M3 ו-M4 היה העורך והמפיק בפועל של M0
+ Gold: ASK WHERE lb ( M1 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M4 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P161 , wdt:P344 , wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 ) ( ?x0 ) ) . ( M4 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) rb
+
+Q: איזה צלם ועורך של M6 כיכבו ב-M0, M1, M2, M3, M4 ו-M5
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 ) ( ?x0 ) ) . ( M4 ( wdt:P161 ) ( ?x0 ) ) . ( M5 ( wdt:P161 ) ( ?x0 ) ) . ( M6 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M0 ( wdt:P161 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 ) ( ?x0 ) ) . ( M4 ( wdt:P1040 ) ( ?x0 ) ) . ( M5 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: על איזה תסריטאי, עורך ובמאי של M0 ו-M1 השפיע M2 והתחתן איתו
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 , wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M0 ( wdt:P737 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( FILTER ( ?x0 != M1 ) ) rb
+
+Q: האם העורך, המפיק בפועל והצלם של M3 היה כוכב ותסריטאי של M0, M1 ו-M2
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: איזה תסריטאי, מפיק בפועל ועורך של M1 ו-M2 הפיק בפועל וערך את M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: האם כוכב, עורך, צלם קולנוע ותסריטאי של M0 ו-M1 היה המפיק בפועל והצלם של M2
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: האם בן הזוג של עורך סרטים כתב וערך את M0 , M1 , M2 , M3 ו-M4
+ Gold: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( FILTER ( ?x0 != ?x1 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( FILTER ( M1 != ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: איזו במאית קולנוע ערכה, כתבה וביימה את M0, M1 ו-M2
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P21 ) ( wd:Q6581072 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q2526255 ) ) . ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: איזה תסריטאי ובמאי של M0, M1, M2 ו-M3 היה עורך קנדי של M5
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M5 ( wdt:P1040 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q16 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q16 ) ) rb
+
+Q: האם במאי ומפיק בפועל של M4 ביים וכתב את M0 , M1 , M2 ו-M3
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: האם המייסד והעובד של M0 הועסק על ידי M1 ו-M2 והועסק על ידי M3 ו-M4
+ Gold: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 , M2 , M3 , M4 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M1 , M2 , M3 , M4 ) ) rb
+
+Q: איזה סרט M1, M2 ו-M3 כתבו, ערכו, הפיקו ובימו
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: איזה סופר, צלם קולנוע, כוכב, עורך ובמאי של M0 ו-M1 היה מפיק בפועל של M2
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( M0 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: האם במאי, צלם קולנוע ותסריטאי של M3 כתב וערך את M0, M1 ו-M2
+ Gold: ASK WHERE lb ( M3 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: האם צלם הקולנוע האמריקאי של M4 ערך, ביים וכתב את M0, M1 ו-M2
+ Gold: ASK WHERE lb ( M4 ( wdt:P344 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) rb
+
+Q: איזה תסריטאי, צלם קולנוע ובמאי של M0, M1 ו-M2 כתב והפיק את M3
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q69423232 ) ) . ( M0 ( wdt:P344 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: איזה סרט בוים, הופק, נכתב ונערך על ידי M1, M2 ו-M3
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: האם מפיק סרטים כתב, הפיק בפועל, ערך וביים את M1, M2 ו-M3
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( M0 ) ) rb
+
+Q: איזה סרט בוים, נערך, נכתב והופק על ידי M1, M2 ו-M3
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: האם הבמאי של M3 ערך, הפיק בפועל, כתב וביים את M0, M1 ו-M2
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 ) ( ?x0 ) ) . ( M1 ( wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( ?x0 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x1 ) ) rb
+
+Q: האם הבמאי של M3 ערך, כתב, הפיק בפועל וביים את M0, M1 ו-M2
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 ) ( ?x0 ) ) . ( M1 ( wdt:P57 ) ( ?x0 ) ) . ( M2 ( wdt:P57 ) ( ?x0 ) ) . ( ?x0 ( wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x1 ) ) rb
+
+Q: איזה עורך וצלם של M1, M2 ו-M3 ערך, הפיק בפועל וביים את M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: האם צלם קולנוע ש- M2 , M3 ו- M4 נערכו ובוימו על ידו והיו בכיכובו היה M0
+ Gold: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M2 ( wdt:P161 , wdt:P57 , wdt:P1040 ) ( M0 ) ) . ( M3 ( wdt:P161 , wdt:P57 , wdt:P1040 ) ( M0 ) ) . ( M4 ( wdt:P161 , wdt:P57 , wdt:P1040 ) ( M0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M2 ( wdt:P57 , wdt:P1040 ) ( M0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 ) ( M0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 ) ( M0 ) ) rb
+
+Q: האם שחקן ש-M1 ו-M2 הושפעו ממנו ו-M4 ו-M5 התחתנו איתו המייסד של M3
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q33999 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( M3 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M4 , M5 ) ) . ( FILTER ( ?x0 != M4 ) ) . ( FILTER ( ?x0 != M5 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( M3 ( wdt:P112 ) ( ?x1 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( M4 != M5 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P26 ) ( ?x0 ) ) rb
+
+Q: איזה עובד ומייסד של M0 ו-M1 הועסק על ידי M2 והועסק על ידי M3 ו-M4
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 , M2 , M3 , M4 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M2 , M3 , M4 ) ) rb
+
+Q: איזה תסריטאי, צלם קולנוע, כוכב ומלחין של M3 ערך וביים את M0, M1 ו-M2
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M3 ( wdt:P161 , wdt:P344 , wdt:P86 , wdt:P58 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 ) ( M0 , M1 , M2 ) ) . ( ?x0 ( wdt:P1040 ) ( ?x1 ) ) . ( M3 ( wdt:P161 , wdt:P344 , wdt:P86 , wdt:P2515 ) ( ?x1 ) ) rb
+
+Q: האם העורך והמפיק בפועל של M2 ביים, ערך, כתב והפיק בפועל את M0 ו-M1
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: האם מפיק סרטים שייסד את M4, M5 ו-M6 ביים וכתב את M1, M2 ו-M3
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q3282637 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( M5 ( wdt:P112 ) ( ?x0 ) ) . ( M6 ( wdt:P112 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P112 ) ( M0 ) ) . ( M4 ( wdt:P112 ) ( M0 ) ) . ( M5 ( wdt:P112 ) ( M6 ) ) rb
+
+Q: איזה מפיק בפועל, עורך, מלחין, צלם קולנוע ובמאי של M2 ערך וכתב את M0 ו-M1
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M2 ( wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P86 , wdt:P1431 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 ) ( M0 , M1 ) ) . ( ?x0 ( wdt:P58 ) ( ?x1 ) ) . ( M2 ( wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P86 , wdt:P1431 ) ( ?x1 ) ) rb
+
+Q: איזה מייסד ועובד אמריקאי של M0 הועסק על ידי M1 והועסק על ידי M2 , M3 ו-M4
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M0 , M1 , M2 , M3 , M4 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M1 , M2 , M3 , M4 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q30 ) ) rb
+
+Q: האם כוכב, תסריטאי ועורך של M0, M1 ו-M2 היה צלם קולנוע, במאי, עורך ומלחין של M3
+ Gold: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P57 , wdt:P1040 , wdt:P86 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P344 , wdt:P1040 , wdt:P86 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P86 , wdt:P2515 ) ( ?x0 ) ) rb
+
+Q: האם המפיק בפועל והתסריטאי של M0 הועסק על ידי M1 , M2 ו-M3 והועסק על ידי M4 , M5 ו-M6
+ Gold: ASK WHERE lb ( M0 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P108 ) ( M1 , M2 , M3 , M4 , M5 , M6 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P108 ) ( ?x0 ) ) . ( M2 ( wdt:P108 ) ( M3 , M4 , M5 , M6 ) ) rb
+
+Q: איזה צלם וכותב של M0, M1, M2 ו-M3 ביים, כתב והפיק בפועל את M4
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: איזה צלם, במאי ועורך של M3 ו-M4 הפיק בפועל את M0 והפיק בפועל את M1 ו-M2
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M3 ( wdt:P344 , wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M4 ( wdt:P344 , wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M0 ( wdt:P1431 ) ( ?x0 ) ) . ( M1 ( wdt:P1431 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1431 ) ( M0 , M1 , M2 ) ) . ( M3 ( wdt:P344 , wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: האם במאי ועורך של M0 , M1 , M2 ו-M3 התחתן עם M4 ו-M5 והתחתן עם M6
+ Gold: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M4 , M5 , M6 ) ) . ( FILTER ( ?x0 != M4 ) ) . ( FILTER ( ?x0 != M5 ) ) . ( FILTER ( ?x0 != M6 ) ) rb
+ Inferred: ASK WHERE lb ( FILTER ( M0 != M1 ) ) . ( FILTER ( M0 != M4 ) ) . ( FILTER ( M5 != M6 ) ) . ( M0 ( wdt:P57 , wdt:P1040 ) ( M1 , M2 , M3 ) ) . ( M3 ( wdt:P26 ) ( ?x0 , M4 , M5 ) ) rb
+
+Q: האם M0 היה אדם זכר ש-M2 , M3 ו-M4 נכתבו, נערכו ובוימו על ידיו
+ Gold: ASK WHERE lb ( M0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M0 ( wdt:P21 ) ( wd:Q6581097 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 ) ) rb
+
+Q: איזה מפיץ ומפיק של M6 נרכש על ידי M0 ו-M1 ונרכש על ידי M2 , M3 , M4 ו-M5
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M6 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( M0 , M1 , M2 , M3 , M4 , M5 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P127 ) ( ?x1 , M0 , M1 , M2 , M3 , M4 , M5 ) ) . ( M6 ( wdt:P750 , wdt:P272 ) ( ?x1 ) ) rb
+
+Q: איזה מלחין, עורך ובמאי של M3 ו-M4 ביים את M5 וערך את M0, M1 ו-M2
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M3 ( wdt:P57 , wdt:P1040 , wdt:P86 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 , wdt:P86 ) ( ?x0 ) ) . ( M5 ( wdt:P57 ) ( ?x0 ) ) . ( M0 ( wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P1040 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M5 ( wdt:P57 ) ( ?x0 ) ) . ( ?x0 ( wdt:P1040 ) ( M0 , M1 , M2 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P86 ) ( ?x1 ) ) rb
+
+Q: האם במאי קולנוע ש-M2 ו-M3 בוימו על ידיו והיו בכיכובו השפיע על M0 והשפיע על M1
+ Gold: ASK WHERE lb ( M2 ( wdt:P161 , wdt:P57 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P57 ) ( ?x0 ) ) . ( M0 ( wdt:P737 ) ( ?x0 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P737 ) ( ?x0 ) ) . ( M1 ( wdt:P106 ) ( wd:Q2526255 ) ) . ( M2 ( wdt:P57 , wdt:P1431 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1431 ) ( ?x0 ) ) rb
+
+Q: האם עורך סרטים שהתחתן עם M5, M6 ו-M7 והשפיע על M1, M2 ו-M3 ייסד את M4
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P737 ) ( ?x0 ) ) . ( M2 ( wdt:P737 ) ( ?x0 ) ) . ( M3 ( wdt:P737 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M5 , M6 , M7 ) ) . ( FILTER ( ?x0 != M5 ) ) . ( FILTER ( ?x0 != M6 ) ) . ( FILTER ( ?x0 != M7 ) ) rb
+ Inferred: ASK WHERE lb ( FILTER ( M0 != M5 ) ) . ( M1 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M2 ( wdt:P737 ) ( M3 ) ) . ( M3 ( wdt:P737 ) ( M0 ) ) . ( M4 ( wdt:P112 ) ( M1 , M2 , M3 ) ) . ( M1 ( wdt:P26 ) ( M5 , M6 , M7 ) ) rb
+
+Q: איזה במאי, כוכב וכותב של M0, M1 ו-M2 התחתן עם, השפיע על והושפע מ-M3
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P737 , wdt:P26 ) ( M3 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q5 ) ) . ( M0 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P58 ) ( ?x0 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M3 ) ) rb
+
+Q: איזה מפיץ ומפיק של M6 נרכש על ידי M0 ו-M1 ורכש את M2 , M3 , M4 ו-M5
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M6 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( M0 , M1 ) ) . ( M2 ( wdt:P127 ) ( ?x0 ) ) . ( M3 ( wdt:P127 ) ( ?x0 ) ) . ( M4 ( wdt:P127 ) ( ?x0 ) ) . ( M5 ( wdt:P127 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P127 ) ( M0 , M1 , M2 , M3 , M4 , M5 ) ) . ( M6 ( wdt:P750 , wdt:P272 ) ( ?x1 ) ) rb
+
+Q: האם כוכב, עורך וצלם של M4 ו-M5 היה סופר ובמאי ספרדי של M0, M1 ו-M2
+ Gold: ASK WHERE lb ( M4 ( wdt:P161 , wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M5 ( wdt:P161 , wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29 ) ) rb
+ Inferred: ASK WHERE lb ( M0 ( wdt:P161 , wdt:P57 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q29 ) ) . ( M4 ( wdt:P161 , wdt:P1040 ) ( ?x0 ) ) rb
+
+Q: האם צלם קולנוע ש-M1 ו-M2 נוסדו על ידו ו-M3, M4 ו-M5 הוקמו על ידו היה בן הזוג של M6
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( M2 ( wdt:P112 ) ( ?x0 ) ) . ( M3 ( wdt:P112 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( M5 ( wdt:P112 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M6 ) ) . ( FILTER ( ?x0 != M6 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P112 ) ( ?x0 ) ) . ( M2 ( wdt:P112 ) ( ?x0 ) ) . ( FILTER ( ?x0 != M6 ) ) . ( M3 ( wdt:P112 ) ( ?x0 ) ) . ( M4 ( wdt:P112 ) ( ?x0 ) ) . ( M5 ( wdt:P112 ) ( ?x0 ) ) rb
+
+Q: איזה צלם וכוכב של M1, M2 ו-M3 כתב, ביים, הפיק בפועל וערך את M0
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M1 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M2 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M3 ( wdt:P161 , wdt:P344 ) ( ?x0 ) ) . ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P161 , wdt:P344 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P161 ) ( ?x0 ) ) . ( M3 ( wdt:P161 ) ( ?x0 ) ) rb
+
+Q: איזה תסריטאי וצלם קולנוע של M0, M1, M2 ו-M3 התחתן עם אדם והשפיע על M4 ו-M5
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P737 ) ( ?x0 ) ) . ( M5 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q5 ) ) . ( FILTER ( ?x0 != ?x1 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( M0 ( wdt:P344 , wdt:P1040 ) ( ?x0 ) ) . ( M1 ( wdt:P344 , wdt:P58 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( ?x1 ) ) . ( ?x1 ( wdt:P31 ) ( wd:Q5 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( FILTER ( ?x0 != M2 ) ) . ( M4 ( wdt:P737 ) ( ?x0 ) ) . ( M5 ( wdt:P737 ) ( ?x0 ) ) rb
+
+Q: האם צלם קולנוע ש-M1 ו-M2 בוימו, הופקו בפועל, נערכו ונכתבו על ידיו היה הבמאי של M3
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 ) ( ?x0 ) ) rb
+ Inferred: ASK WHERE lb ( M1 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: האם במאי סרטים ש-M1, M2 ו-M3 נכתבו ונערכו על ידו התחתן עם והשפיע על M4
+ Gold: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q2526255 ) ) . ( M1 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P737 ) ( ?x0 ) ) . ( ?x0 ( wdt:P26 ) ( M4 ) ) . ( FILTER ( ?x0 != M4 ) ) rb
+ Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q2526255 ) ) . ( ?x0 ( wdt:P26 ) ( M1 , M2 , M3 ) ) . ( FILTER ( ?x0 != ?x1 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: איזה מפיץ ומפיק של M6 נרכש על ידי M0 , M1 , M2 ו-M3 ונרכש על ידי M4 ו-M5
+ Gold: SELECT DISTINCT ?x0 WHERE lb ( M6 ( wdt:P750 , wdt:P272 ) ( ?x0 ) ) . ( ?x0 ( wdt:P127 ) ( M0 , M1 , M2 , M3 , M4 , M5 ) ) rb
+ Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P127 ) ( ?x1 , M0 , M1 , M2 , M3 ) ) . ( M6 ( wdt:P750 , wdt:P272 ) ( ?x1 ) ) rb
+
+Q: איזה סרט בוים, הופק ונכתב על ידי M3, M4, M5 ו-M6 והיה בכיכובם של M1 ו-M2 Gold: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P162|wdt:P272 , wdt:P58 ) ( M3 , M4 , M5 , M6 ) ) . ( ?x0 ( wdt:P161 ) ( M1 , M2 ) ) rb Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 ) ) . ( ?x0 ( wdt:P161 ) ( M3 , M4 , M5 , M6 ) ) rb
+
+==========CORRECT==========
+Q: האם M0 היה תסריטאי
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q69423232 ) ) rb
+
+Q: האם M0 היה מלחין
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q36834 ) ) rb
+
+Q: מה M0 הקים
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P112 ) ( M0 ) ) rb
+
+Q: מה M0 ערך
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 ) ( M0 ) ) rb
+
+Q: האם M0 היה סרט ההמשך של M1
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P155 ) ( M1 ) ) rb
+
+Q: האם סרט ההמשך של M1 היה M0
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P155 ) ( M1 ) ) rb
+
+Q: מה היה ההורה של M0
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P40|wdt:P355 ) ( M0 ) ) rb
+
+Q: מה נכתב על ידי M0
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P58 ) ( M0 ) ) rb
+
+Q: האם M0 הועסק על ידי M1
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P108 ) ( M1 ) ) rb
+
+Q: האם M0 נכתב על ידי M1
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P58 ) ( M1 ) ) rb
+
+Q: האם M0 הופק בפועל על ידי M1
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P1431 ) ( M1 ) ) rb
+
+Q: האם M1 הופק על ידי מלחין
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q36834 ) ) . ( M1 ( wdt:P162|wdt:P272 ) ( ?x0 ) ) rb
+
+Q: מה נכתב ובוים על ידי M0
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P58 ) ( M0 ) ) rb
+
+Q: מה נכתב ונערך על ידי M0
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) rb
+
+Q: האם בן הזוג של M2 היה צלם קולנוע יפני
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q222344 ) ) . ( ?x0 ( wdt:P27 ) ( wd:Q17 ) ) . ( ?x0 ( wdt:P26 ) ( M2 ) ) . ( FILTER ( ?x0 != M2 ) ) rb
+
+Q: מה נכתב והופק על ידי M0
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P162|wdt:P272 , wdt:P58 ) ( M0 ) ) rb
+
+Q: מה נכתב ונערך על ידי M0, M1 ו-M2
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: האם M0 הופק ונערך על ידי M1 , M2 ו-M3
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 ) ) rb
+
+Q: מה נכתב ונערך על ידי M0 , M1 ו-M2
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: האם M0 נכתב ונערך על ידי M1 , M2 ו-M3
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: האם M0 הופק ונערך על ידי M1 , M2 ו-M3
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 ) ) rb
+
+Q: מה הופק והופק בפועל על ידי M0 , M1 ו-M2
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1431 , wdt:P162|wdt:P272 ) ( M0 , M1 , M2 ) ) rb
+
+Q: האם M0 הופק, בוים ונכתב על ידי M1 ו-M2
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 , M2 ) ) rb
+
+Q: מה ערכו וביימו M0, M1, M2 ו-M3
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 ) ( M0 , M1 , M2 , M3 ) ) rb
+
+Q: האם M0 בוים ונכתב על ידי M1 , M2 , M3 ו-M4
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 ) ) rb
+
+Q: מה נכתב, הופק בפועל, הופק ונערך על ידי M0
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P1040 , wdt:P1431 , wdt:P162|wdt:P272 , wdt:P58 ) ( M0 ) ) rb
+
+Q: האם M0 הופק בפועל והופק על ידי M1 , M2 , M3 ו-M4
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P1431 , wdt:P162|wdt:P272 ) ( M1 , M2 , M3 , M4 ) ) rb
+
+Q: האם M0 נערך, הופק בפועל, הופק ונכתב על ידי M1
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P1040 , wdt:P1431 , wdt:P162|wdt:P272 , wdt:P58 ) ( M1 ) ) rb
+
+Q: מה בוים, נערך ונכתב על ידי M0, M1 ו-M2
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: מה בוים, נכתב ונערך על ידי M0, M1 ו-M2
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: מה נכתב, הופק בפועל ובוים על ידי M0, M1 ו-M2
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: האם M0 נכתב ובוים על ידי M1 , M2 , M3 , M4 ו-M5
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 , M5 ) ) rb
+
+Q: מה בוים ונכתב על ידי M0 , M1 , M2 , M3 ו-M4
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P58 ) ( M0 , M1 , M2 , M3 , M4 ) ) rb
+
+Q: מה בוים, נכתב ונערך על ידי M0, M1 ו-M2
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 ) ) rb
+
+Q: האם עורך סרטים הפיק בפועל וכתב את M1, M2, M3 ו-M4
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P1431 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: האם M0 נכתב, נערך ובוים על ידי M1 , M2 ו- M3
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: האם M0 נכתב, בוים והופק בפועל על ידי M1 , M2 ו-M3
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: האם M0 נכתב, הופק בפועל, ובוים על ידי M1 , M2 ו-M3
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: איזה סרט בוים ונכתב על ידי M1 , M2 , M3 , M4 ו-M5
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 , M5 ) ) rb
+
+Q: איזה סרט M1, M2 ו-M3 הפיקו בפועל, כתבו וביימו
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: מה בוים, נכתב על ידי ונערך על ידי M0, M1, M2 ו-M3
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M0 , M1 , M2 , M3 ) ) rb
+
+Q: האם עורך סרטים ערך, כתב וביים את M1, M2, M3 ו-M4
+Gold/Inferred: ASK WHERE lb ( ?x0 ( wdt:P106 ) ( wd:Q7042855 ) ) . ( M1 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M2 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M3 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) . ( M4 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( ?x0 ) ) rb
+
+Q: איזה סרט בוים ונכתב על ידי M1, M2, M3, M4 ו-M5
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P58 ) ( M1 , M2 , M3 , M4 , M5 ) ) rb
+
+Q: האם מעצב תלבושות ש- M2 , M3 , M4 , M5 ו- M6 נכתבו ונערכו על ידו היה M0
+Gold/Inferred: ASK WHERE lb ( M0 ( wdt:P106 ) ( wd:Q1323191 ) ) . ( M2 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M3 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M4 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M5 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) . ( M6 ( wdt:P1040 , wdt:P58 ) ( M0 ) ) rb
+
+Q: מהו סרט שנערך, נכתב ובוים על ידי M1 , M2 ו- M3
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1040 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
+Q: מהו סרט שהופק בפועל, בוים ונכתב על ידי M1 , M2 ו-M3
+Gold/Inferred: SELECT DISTINCT ?x0 WHERE lb ( ?x0 ( wdt:P31 ) ( wd:Q11424 ) ) . ( ?x0 ( wdt:P57 , wdt:P1431 , wdt:P58 ) ( M1 , M2 , M3 ) ) rb
+
