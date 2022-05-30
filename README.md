@@ -4,13 +4,11 @@ Wikidata. Our dataset includes questions in four languages (Hebrew, Kannada, Chi
 queries. MCWQ contains 124,187 question query pairs.
 
 ## Data
-The MCWQ dataset can be downloaded at [Google Drive](https://drive.google.com/drive/folders/19YmuXYKmnmVllVkOr9nMT1nsXFd9i9hu?usp=sharing).  
+The json file of the full MCWQ dataset can be downloaded at [Google Drive](https://drive.google.com/drive/folders/19YmuXYKmnmVllVkOr9nMT1nsXFd9i9hu?usp=sharing). The three MCD splits and a random split is stored under `mcwq/splits/`. The gold test set is stored as `mcwq/gold_test.json`.
 
-The three MCD splits and a random split is stored under `mcwq/splits/`.
+We also provide the preprocessed files using RIR ([reversible intermediate representations](https://github.com/google-research/language/tree/master/language/compir)) in this GitHub repository under `mcwq/translations/`. 
 
-The gold test set is stored as `mcwq/gold_test.json`.
-
-MCWQ's details and generation method is described in the paper.
+MCWQ's details and generation method are described in our paper mentioned below.
 
 ## Trainig T5/mT5 models
 To replicate the results reported in the paper:
@@ -21,10 +19,9 @@ For training and evaluating mT5, please refer to `hf/run_mt5.sh`;
 
 For evaluating zero-shot cross-lingual transfer of mT5, please refer to `hf/pred_eval_mt5_zero_shot.sh`.
 
-We are working on releasing the checkpoints on HuggingFace soon.
+We are working on releasing the checkpoints on HuggingFace soon. 
 
-
-Below show the results of monolingual and cross-lingual experiments on MCWQ. 
+You can find the mBERT, T5 and mT5 prediction results in the Git Repo under `mcwq/results/`. 
 
 ## Experiment Results
 **Monolingual Experiments**:
@@ -50,7 +47,7 @@ Below show the results of monolingual and cross-lingual experiments on MCWQ.
 ## Citations
 
 If you use this dataset, please cite the following:
-* Ruixiang Cui, Rahul Aralikatte, Heather Lent and Daniel Hershcovich.2021.[Compositional Generalization in Multilingual Semantic Parsing over Wikidata](https://arxiv.org/abs/2108.03509). TACL, 2022.
+* Ruixiang Cui, Rahul Aralikatte, Heather Lent and Daniel Hershcovich.2021. [Compositional Generalization in Multilingual Semantic Parsing over Wikidata](https://arxiv.org/abs/2108.03509). TACL. 2022.
 ``` bibtex
 @article{cui-etal-2022-compositional,
     title={Compositional Generalization in Multilingual Semantic Parsing over Wikidata},
