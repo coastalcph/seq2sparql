@@ -58,10 +58,10 @@ If you use this dataset, please cite the following:
     url = "https://arxiv.org/abs/2108.03509"
 }
 ```
-The CWQ dataset is based on [CFQ](https://github.com/google-research/google-research/tree/master/cfq).
+The MCWQ dataset is based on [CFQ](https://github.com/google-research/google-research/tree/master/cfq).
 
 ## Contact
 For questions and usage issues, please contact <rc@di.ku.dk> .
 
 ## License
-CWQ is released under the [CC-BY license](https://creativecommons.org/licenses/by/4.0/).
+MCWQ is released under the [CC-BY license](https://creativecommons.org/licenses/by/4.0/).
