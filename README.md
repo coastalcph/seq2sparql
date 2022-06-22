@@ -47,7 +47,7 @@ You can find the mBERT, T5 and mT5 prediction results in the Git Repo under `mcw
 ## Citations
 
 If you use this dataset, please cite the following:
-* Ruixiang Cui, Rahul Aralikatte, Heather Lent and Daniel Hershcovich.2021. [Compositional Generalization in Multilingual Semantic Parsing over Wikidata](https://arxiv.org/abs/2108.03509). TACL. 2022.
+* Ruixiang Cui, Rahul Aralikatte, Heather Lent and Daniel Hershcovich.2022. [Compositional Generalization in Multilingual Semantic Parsing over Wikidata](https://arxiv.org/abs/2108.03509). TACL.
 ``` bibtex
 @article{cui-etal-2022-compositional,
     title={Compositional Generalization in Multilingual Semantic Parsing over Wikidata},
