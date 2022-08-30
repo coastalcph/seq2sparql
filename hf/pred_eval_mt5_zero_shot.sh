@@ -25,8 +25,8 @@ for split in mcd1 mcd2 mcd3 random_split; do
             --source_lang src \
             --target_lang tgt \
             --source_prefix "translate ${langs[$lang]} to Sparql: " \
-            --validation_file ../data/translations/$split/dev.$lang.json \
-            --test_file ../data/translations/$split/test.$lang.json \
+            --validation_file ../mcwq/translations/$split/dev.$lang.json \
+            --test_file ../mcwq/translations/$split/test.$lang.json \
             --use_fast_tokenizer False \
             --max_source_length 256 \
             --max_target_length 512 \
@@ -43,8 +43,8 @@ EVALUATE_ON=test
 for split in mcd1 mcd2 mcd3 random_split; do   # mcd1 mcd2 mcd3 random_split
     for lang in he kn zh; do  # en he kn zh
         echo "Evaluating on $split/$lang"
-        python -m evaluate_main --questions_path=data/translations/$split/${EVALUATE_ON}.$lang.txt \
-        --golden_answers_path=data/translations/$split/${EVALUATE_ON}.$lang.sparql \
+        python -m evaluate_main --questions_path=mcwq/translations/$split/${EVALUATE_ON}.$lang.txt \
+        --golden_answers_path=mcwq/translations/$split/${EVALUATE_ON}.$lang.sparql \
         --inferred_answers_path=hf/models/mt5-base-en-$split/generated_predictions_$lang.txt \
         --output_path=hf/models/mt5-base-en-$split/result_$lang.txt
     done
